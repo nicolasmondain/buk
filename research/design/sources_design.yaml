@@ -1,0 +1,85 @@
+# Blogs, guides et archives sur le dessin old school (sélection du 2026-11-04).
+#
+# But : nourrir le sens artistique de buk (composition, construction des motifs, valeurs),
+# pas ses réglages machine (ça, c'est research/sources.yaml).
+#
+# Règle : on analyse et on reformule des PRINCIPES ; on ne recopie jamais un flash.
+# Les images téléchargées restent dans research/design/images/ (ignoré par git).
+#
+# type : guide (texte + schémas pédagogiques) · blog (articles) · archive (planches historiques)
+# images : ce qu'on va y chercher pour l'analyse visuelle
+
+sources:
+  # --- Guides pédagogiques : construction pas à pas, schémas d'ombrage
+  - nom: Tattooing 101 — dessiner le traditionnel
+    url: https://tattooing101.com/learn/guides/draw-traditional/
+    type: guide
+    priorite: 1
+    images: étapes de construction rose (6), crâne (8), hirondelle (12), styles de queue, schémas d'ombrage bon/mauvais
+  - nom: Tattooing 101 — ombrer le traditionnel américain
+    url: https://tattooing101.com/learn/styles/how-to-shade-american-traditional-tattoos/
+    type: guide
+    priorite: 1
+    images: schémas whip, packing, fond plus sombre que le sujet
+  - nom: Tattooing 101 — techniques de design
+    url: https://tattooing101.com/learn/techniques/design/
+    type: guide
+    priorite: 2
+  - nom: Envato Tuts+ — hirondelles style rétro
+    url: https://design.tutsplus.com/tutorials/how-to-draw-a-group-of-swallows-in-a-retro-tattoo-style--cms-25075
+    type: guide
+    priorite: 2
+    images: construction vectorielle d'hirondelles, composition en groupe
+
+  # --- Grammaire des motifs et du style
+  - nom: Apollo Tattoo — grammaire de l'hirondelle
+    url: https://losangelestattooshop.com/tattoos/ideas/swallow-tattoo-ideas/
+    type: blog
+    priorite: 1
+  - nom: American Tattoo Society — American traditional
+    url: https://www.americantattoosociety.com/styles/american-traditional/
+    type: blog
+    priorite: 2
+  - nom: Tattoodo — guide du traditionnel
+    url: https://www.tattoodo.com/guides/styles/traditional
+    type: blog
+    priorite: 2
+    images: nombreuses photos de tatouages traditionnels cicatrisés
+  - nom: Holm Studio — règles de design
+    url: https://www.holmstudio.co.uk/news/tattoo-design-rules-are-you-breaking-any
+    type: blog
+    priorite: 2
+  - nom: Good Graces Tattoo — Bold will hold
+    url: https://goodgracestattoo.com/blog/bold-will-hold/
+    type: blog
+    priorite: 2
+  - nom: Pink Panther Tattoo — Traditional flash
+    url: https://www.pinkpanthertattoopdx.com/tattoo-blog-portland/traditional-flash
+    type: blog
+    priorite: 3
+
+  # --- Histoire du flash (contexte, vocabulaire)
+  - nom: Wikipédia — Flash (tattoo)
+    url: https://en.wikipedia.org/wiki/Flash_(tattoo)
+    type: blog
+    priorite: 3
+  - nom: Fine Lines Good Times — histoire du flash
+    url: https://www.finelinesgoodtimes.com/blog/history-and-legacy-of-flash-tattooing
+    type: blog
+    priorite: 3
+
+  # --- Archives de planches historiques (analyse visuelle, consultation sur place/en ligne)
+  - nom: Tattoo Archive — flash
+    url: https://tattooarchivestore.com/flash/
+    type: archive
+    priorite: 2
+    images: planches vintage (vignettes du catalogue)
+  - nom: Fat City Gallery — vintage flash
+    url: https://www.fatcitygallery.com/vintage-tattoo-flash
+    type: archive
+    priorite: 2
+  - nom: Lyle Tuttle Collection
+    url: https://lyletuttlecollection.com/
+    type: archive
+    priorite: 3
+    images: peu de planches en ligne ; collection consultable sur demande

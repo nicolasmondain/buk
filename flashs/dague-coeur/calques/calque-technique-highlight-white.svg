@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="87.5mm" height="132.5mm" viewBox="0 0 87.5 132.5"><rect x="0" y="0" width="87.5" height="132.5" fill="#FFFFFF" /><g><g id="reperes"><path stroke-width="0.25" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M 43.75 92.50 C 27.50 80.00 12.50 70.00 12.50 56.25 C 12.50 46.25 20.00 40.00 28.75 40.00 C 36.25 40.00 41.25 45.00 43.75 50.00 C 46.25 45.00 51.25 40.00 58.75 40.00 C 67.50 40.00 75.00 46.25 75.00 56.25 C 75.00 70.00 60.00 80.00 43.75 92.50 Z" stroke-dasharray="0.4 1.6" />
+    <path stroke-width="0.25" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M 39.38 30.00 L 39.38 44.16" stroke-dasharray="0.4 1.6" />
+    <path stroke-width="0.25" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M 48.12 30.00 L 48.12 44.16" stroke-dasharray="0.4 1.6" />
+    <path stroke-width="0.25" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M 39.38 89.16 L 39.38 102.50 L 43.75 120.00 L 48.12 102.50 L 48.12 89.16" stroke-dasharray="0.4 1.6" />
+    <path stroke-width="0.25" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M 26.25 24.75 L 61.25 24.75 L 61.25 30.00 L 26.25 30.00 Z" stroke-dasharray="0.4 1.6" />
+    <path stroke-width="0.25" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M 40.75 13.25 L 40.25 24.75 L 47.25 24.75 L 46.75 13.25 Z" stroke-dasharray="0.4 1.6" />
+    <circle cx="43.75" cy="9.38" r="4.00" stroke-width="0.25" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.4 1.6" />
+    <circle cx="23.75" cy="27.38" r="2.38" stroke-width="0.25" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.4 1.6" />
+    <circle cx="63.75" cy="27.38" r="2.38" stroke-width="0.25" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.4 1.6" />
+  </g><g id="calque-rehauts"><path fill="none" d="M 61.25 45.00 C 65.62 45.00 69.38 48.25 70.00 53.25 C 67.75 50.50 64.50 48.25 61.25 47.50 C 60.12 47.12 60.12 45.25 61.25 45.00 Z" stroke="#000000" stroke-width="0.25" stroke-dasharray="0.8 0.8" />
+    <text x="64.8" y="48.17" font-size="2.13" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" fill="#000000">B</text><circle cx="42.50" cy="8.00" r="0.94" fill="none" stroke="#000000" stroke-width="0.25" stroke-dasharray="0.8 0.8" />
+    <circle cx="44.60" cy="126.76" r="0.63" fill="none" stroke="#000000" stroke-width="0.25" stroke-dasharray="0.8 0.8" />
+    <circle cx="27.29" cy="87.36" r="0.77" fill="none" stroke="#000000" stroke-width="0.25" stroke-dasharray="0.8 0.8" />
+    <circle cx="63.45" cy="93.62" r="0.70" fill="none" stroke="#000000" stroke-width="0.25" stroke-dasharray="0.8 0.8" />
+  </g></g></svg>

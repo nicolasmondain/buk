@@ -1,0 +1,74 @@
+# Thèmes que la recherche doit couvrir avant qu'on arrête de transcrire.
+#
+# Critère d'arrêt (coverage.py) :
+#   1. chaque thème `required: true` est SATURÉ : au moins `min_videos` vidéos distinctes et
+#      `min_channels` chaînes distinctes y apportent des affirmations ;
+#   2. OU la nouveauté s'est tarie : sur les `window` dernières notes, moins de
+#      `novelty_threshold` des affirmations sont marquées `nouveau: true`.
+# Tant qu'aucun des deux n'est vrai, on continue (harvest.py fetch choisit en priorité les
+# vidéos qui touchent les thèmes non saturés).
+
+stop:
+  min_videos: 3
+  min_channels: 2
+  window: 6
+  novelty_threshold: 0.15
+  max_videos: 60          # garde-fou absolu
+
+themes:
+  aiguilles:
+    required: true
+    cible: references/AIGUILLES.md, assets/aiguilles.json
+    keywords: [needle, needles, liner, magnum, mag, round shader, cartridge, configuration, aiguille]
+  reglages-machine:
+    required: true
+    cible: references/MACHINE.md, assets/techniques.json (tension_v, course_mm)
+    keywords: [voltage, volts, stroke, hang, machine setup, rotary, coil, pen, réglage, tension]
+  stencil:
+    required: true
+    cible: references/CALQUES.md
+    keywords: [stencil, transfer, thermal, thermographic, hectograph, calque]
+  stretch-prise:
+    required: true
+    cible: references/TECHNIQUES.md (stretch), references/MACHINE.md (prise)
+    keywords: [stretch, stretching, grip, hand position, posture, hold]
+  lining:
+    required: true
+    cible: assets/techniques.json (bold-line, lining)
+    keywords: [line, lines, lining, linework, outline, ligne, trait]
+  whip:
+    required: true
+    cible: assets/techniques.json (whip)
+    keywords: [whip, shading, shade, pendulum, ombrage]
+  pepper:
+    required: false
+    cible: assets/techniques.json (pepper)
+    keywords: [stipple, pepper, dotwork, poivré]
+  noir-plein:
+    required: true
+    cible: assets/techniques.json (solid-black)
+    keywords: [packing, pack, solid black, black fill, saturation, remplissage]
+  rouge:
+    required: true
+    cible: assets/techniques.json (solid-red), references/ENCRES.md
+    keywords: [color, colour, red, color packing, couleur, rouge]
+  blanc:
+    required: false
+    cible: assets/techniques.json (highlight-white)
+    keywords: [white, highlight, highlights, blanc, rehaut]
+  ordre-seance:
+    required: true
+    cible: references/SEANCE.md
+    keywords: [process, step by step, full tattoo, start to finish, order, séance]
+  hygiene:
+    required: true
+    cible: references/SECURITE.md
+    keywords: [setup, station, cross contamination, barrier, hygiene, sterile, hygiène]
+  soins:
+    required: false
+    cible: references/SECURITE.md (aftercare)
+    keywords: [aftercare, healing, heal, soins, cicatrisation]
+  design-old-school:
+    required: false
+    cible: references/DESIGN_OLD_SCHOOL.md
+    keywords: [traditional, old school, flash, american traditional, sailor jerry, design]

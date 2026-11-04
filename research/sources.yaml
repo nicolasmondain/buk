@@ -1,0 +1,100 @@
+# Chaînes et recherches YouTube à exploiter.
+#
+# - `channels` : ajoute ici les chaînes que tu veux faire analyser. `url` est facultatif :
+#   sans url, harvest.py retrouve la chaîne par une recherche YouTube sur `name` (vérifie le
+#   résultat dans research/index.json, champ `channel_url`).
+# - `searches` : requêtes libres, utiles pour couvrir un thème précis quel que soit l'auteur.
+# - `priority` : 1 (haute) à 3 (basse). Les vidéos des sources prioritaires passent d'abord.
+#
+# On privilégie les vidéos où l'artiste EXPLIQUE (tutoriels, breakdowns, Q&A) plutôt que les
+# time-lapses musicaux sans parole : sans parole, pas de transcript.
+
+channels:
+  # Sélection du 2026-11-04 : chaque chaîne a été vérifiée (existence, identifiant, au moins une
+  # vidéo pédagogique sur un thème de buk). La présence d'une narration n'a pas pu être confirmée
+  # partout (YouTube bloque la lecture des pages) : harvest.py marque `no-transcript` les vidéos
+  # sans parole, et les écarte.
+
+  # --- Priorité 1 : pédagogie + traditionnel / thèmes centraux
+  - name: Tattooing 101
+    url: https://www.youtube.com/channel/UCGI6xGwOVkI7xq4_erDKG4A
+    priority: 1
+    note: ~407K abonnés. Vidéo « Tattoo Shading Tips (Traditional Style) », guides lining/shading/color packing
+  - name: Daniel Yuck
+    url: https://www.youtube.com/channel/UCMcMROmEPiyJnkvt3SdK29Q
+    priority: 1
+    note: « Traditional Fist Tattoo Tutorial » — lining et ombrage poivré sur un motif traditionnel
+  - name: Fani Meherzi Tattoo
+    url: https://www.youtube.com/channel/UCy3x_m2hOLuSx5LMJbfHLfA
+    priority: 1
+    note: Noir plein (« Solid Black Packing ») et tutoriels débutants sur peau réelle
+  - name: Axel Dale Tattoo
+    url: https://www.youtube.com/channel/UC-zqhmHKsoERcjlKzC3epFQ
+    priority: 1
+    note: « 11 Extremely Useful Lining and Shading Tips » — choix d'aiguilles (round shader, liner)
+
+  # --- Priorité 2 : thèmes précis (rouge, whip) ou chaînes généralistes solides
+  - name: Jono Smith
+    url: https://www.youtube.com/channel/UCQO9EhbMxRdxaTbcRwYAqdw
+    priority: 2
+    note: Remplissage des couleurs difficiles (utile pour le rouge)
+  - name: Art-Something
+    url: https://www.youtube.com/channel/UC7Zv4MpYGHG5-EvNFZV-caA
+    priority: 2
+    note: Color packing au round shader et à la magnum
+  - name: Arash Tattoo
+    url: https://www.youtube.com/channel/UC1aVi8WhhTBisAwJEV-i10A
+    priority: 2
+    note: « Whip Shading for Beginners »
+  - name: Dakar tattooing
+    url: https://www.youtube.com/channel/UCkPivum20-TWGT9_n7nxqMQ
+    priority: 2
+    note: ~355K abonnés, apprentissage généraliste — filtrer sur les thèmes
+  - name: Fireside Tattoo Network
+    url: https://www.youtube.com/channel/UC0R9GXffuI7Ef4aZ0S1JSqg
+    priority: 2
+    note: Série de vidéos techniques + podcast ; style des invités non vérifié
+
+  # --- Priorité 3 : dessin du flash (thème design-old-school uniquement)
+  - name: thebrokenpuppet
+    url: https://www.youtube.com/channel/UCarX4fHQibOwlYkuYuxQG_g
+    priority: 3
+    note: Dessin et ombrage de flashs traditionnels (Procreate), pas de piquage
+
+  # Écartées : The Real Bronson (introuvable de façon fiable), chaînes de tatouage japonais ou
+  # tibétain (autre tradition), interviews de style sans technique.
+  # Ajouter ici :
+  # - name: <chaîne>
+  #   url: https://www.youtube.com/@handle
+  #   priority: 1
+
+searches:
+  - query: american traditional tattoo lining tutorial
+    priority: 1
+  - query: traditional tattoo whip shading tutorial
+    priority: 1
+  - query: tattoo solid black packing technique
+    priority: 1
+  - query: tattoo color packing red traditional
+    priority: 1
+  - query: tattoo needle configurations explained round liner magnum
+    priority: 1
+  - query: tattoo machine voltage settings lining shading
+    priority: 2
+  - query: tattoo stencil application tutorial thermal
+    priority: 2
+  - query: tattoo white highlights traditional
+    priority: 2
+  - query: how to set up tattoo station cross contamination
+    priority: 2
+  - query: tatouage old school tuto lignes ombrage
+    priority: 2
+  - query: tatouage traditionnel remplissage noir rouge
+    priority: 3
+
+limits:
+  videos_per_channel: 60      # nombre de vidéos listées par chaîne
+  results_per_search: 15      # nombre de résultats par recherche
+  min_duration_s: 180         # ignore les shorts
+  max_duration_s: 5400        # ignore les lives de plusieurs heures
+  languages: [fr, en]         # langues de sous-titres acceptées, par ordre de préférence

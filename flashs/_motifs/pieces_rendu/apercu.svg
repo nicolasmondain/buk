@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="170mm" height="60mm" viewBox="0 0 170 60"><defs><pattern id="poivre" width="1.2" height="1.2" patternUnits="userSpaceOnUse"><circle cx="0.3" cy="0.3" r="0.22" fill="#111111" /><circle cx="0.9" cy="0.9" r="0.18" fill="#111111" /></pattern></defs><rect x="0" y="0" width="170" height="60" fill="#F1D3B3" /><g id="apercu-rouge"><path fill="#C1121F" fill-rule="evenodd" d="M96.00 30.00 L96.00 11.00 L100.69 23.54 Z" stroke="none" />
+    <path fill="#C1121F" fill-rule="evenodd" d="M96.00 30.00 L114.07 24.13 L103.59 32.47 Z" stroke="none" />
+    <path fill="#C1121F" fill-rule="evenodd" d="M96.00 30.00 L107.17 45.37 L96.00 37.98 Z" stroke="none" />
+    <path fill="#C1121F" fill-rule="evenodd" d="M96.00 30.00 L84.83 45.37 L88.41 32.47 Z" stroke="none" />
+    <path fill="#C1121F" fill-rule="evenodd" d="M96.00 30.00 L77.93 24.13 L91.31 23.54 Z" stroke="none" />
+    <path fill="#C1121F" fill-rule="evenodd" d="M156.00 13.84 C156.52 15.66 158.60 17.22 158.60 18.52 C158.60 20.08 157.43 20.86 156.00 20.86 C154.57 20.86 153.40 20.08 153.40 18.52 C153.40 17.22 155.48 15.66 156.00 13.84 Z" stroke="none" />
+    <path fill="#C1121F" fill-rule="evenodd" d="M160.00 29.80 C160.40 31.20 162.00 32.40 162.00 33.40 C162.00 34.60 161.10 35.20 160.00 35.20 C158.90 35.20 158.00 34.60 158.00 33.40 C158.00 32.40 159.60 31.20 160.00 29.80 Z" stroke="none" />
+    <path fill="#C1121F" fill-rule="evenodd" d="M154.00 41.20 C154.60 43.30 157.00 45.10 157.00 46.60 C157.00 48.40 155.65 49.30 154.00 49.30 C152.35 49.30 151.00 48.40 151.00 46.60 C151.00 45.10 153.40 43.30 154.00 41.20 Z" stroke="none" />
+  </g><g id="apercu-noir"><path fill="#111111" fill-rule="evenodd" d="M96.00 30.00 L91.31 23.54 L96.00 11.00 Z" stroke="none" />
+    <path fill="#111111" fill-rule="evenodd" d="M96.00 30.00 L100.69 23.54 L114.07 24.13 Z" stroke="none" />
+    <path fill="#111111" fill-rule="evenodd" d="M96.00 30.00 L103.59 32.47 L107.17 45.37 Z" stroke="none" />
+    <path fill="#111111" fill-rule="evenodd" d="M96.00 30.00 L96.00 37.98 L84.83 45.37 Z" stroke="none" />
+    <path fill="#111111" fill-rule="evenodd" d="M96.00 30.00 L88.41 32.47 L77.93 24.13 Z" stroke="none" />
+    <path fill="#111111" fill-rule="evenodd" d="M124.00 40.00 C119.22 34.19 121.50 25.85 135.00 20.95 C136.91 33.48 132.02 41.07 124.00 40.00 Z M124.59 38.31 C127.26 31.72 130.94 26.22 133.90 22.85 C132.37 27.05 129.54 33.04 125.17 38.64 Z M126.60 34.39 Q125.94 32.23 126.42 29.20 Q126.66 31.88 127.10 33.53 Z M129.32 31.89 Q131.52 31.38 133.90 29.46 Q131.46 30.59 129.81 31.03 Z M130.12 28.29 Q129.46 26.13 129.94 23.11 Q130.18 25.78 130.62 27.44 Z" stroke="none" />
+    <path fill="#111111" fill-rule="evenodd" d="M140.00 44.00 C144.15 40.44 143.58 34.18 134.53 28.96 C131.58 37.70 134.12 43.76 140.00 44.00 Z M139.79 42.72 C138.71 37.66 136.77 33.26 135.07 30.47 C135.64 33.67 136.91 38.31 139.34 42.88 Z M138.84 39.65 Q139.59 38.19 139.63 35.96 Q139.12 37.85 138.60 38.98 Z M137.22 37.52 Q135.71 36.88 134.24 35.20 Q135.84 36.32 136.97 36.84 Z M137.09 34.84 Q137.84 33.38 137.88 31.15 Q137.37 33.04 136.85 34.17 Z" stroke="none" />
+  </g><g id="apercu-noir-fin"><path fill="#111111" fill-rule="evenodd" d="M15.00 28.35 L11.85 28.35 L11.85 39.35 L15.00 39.35 Z" stroke="none" />
+    <path fill="#111111" fill-rule="evenodd" d="M65.00 28.35 L68.15 28.35 L68.15 39.35 L65.00 39.35 Z" stroke="none" />
+  </g><g id="apercu-rehauts"><path fill="#FFFFFF" fill-rule="evenodd" d="M156.91 17.61 C157.61 17.87 157.61 18.91 157.17 19.17 C156.99 18.65 156.83 18.13 156.91 17.61 Z" stroke="none" />
+    <path fill="#FFFFFF" fill-rule="evenodd" d="M160.70 32.70 C161.24 32.90 161.24 33.70 160.90 33.90 C160.76 33.50 160.64 33.10 160.70 32.70 Z" stroke="none" />
+    <path fill="#FFFFFF" fill-rule="evenodd" d="M155.05 45.55 C155.86 45.85 155.86 47.05 155.35 47.35 C155.14 46.75 154.96 46.15 155.05 45.55 Z" stroke="none" />
+  </g><g id="apercu-interieur"><path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M11.85 28.35 L11.85 39.35" />
+    <path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M68.15 28.35 L68.15 39.35" />
+    <path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M96.00 30.00 L96.00 11.00" />
+    <path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M96.00 30.00 L114.07 24.13" />
+    <path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M96.00 30.00 L107.17 45.37" />
+    <path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M96.00 30.00 L84.83 45.37" />
+    <path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M96.00 30.00 L77.93 24.13" />
+    <path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M156.00 13.84 C156.52 15.66 158.60 17.22 158.60 18.52 C158.60 20.08 157.43 20.86 156.00 20.86 C154.57 20.86 153.40 20.08 153.40 18.52 C153.40 17.22 155.48 15.66 156.00 13.84 Z" />
+    <path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M160.00 29.80 C160.40 31.20 162.00 32.40 162.00 33.40 C162.00 34.60 161.10 35.20 160.00 35.20 C158.90 35.20 158.00 34.60 158.00 33.40 C158.00 32.40 159.60 31.20 160.00 29.80 Z" />
+    <path fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" d="M154.00 41.20 C154.60 43.30 157.00 45.10 157.00 46.60 C157.00 48.40 155.65 49.30 154.00 49.30 C152.35 49.30 151.00 48.40 151.00 46.60 C151.00 45.10 153.40 43.30 154.00 41.20 Z" />
+  </g><g id="apercu-contour"><path fill="none" stroke="#111111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M15.00 24.50 C30.00 22.50 50.00 22.50 65.00 24.50 L65.00 35.50 C50.00 33.50 30.00 33.50 15.00 35.50 Z" />
+    <path fill="none" stroke="#111111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M15.00 28.35 L8.00 28.35 L11.30 33.85 L8.00 39.35 L15.00 39.35 Z" />
+    <path fill="none" stroke="#111111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M65.00 28.35 L72.00 28.35 L68.70 33.85 L72.00 39.35 L65.00 39.35 Z" />
+    <path fill="none" stroke="#111111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M96.00 11.00 L100.69 23.54 L114.07 24.13 L103.59 32.47 L107.17 45.37 L96.00 37.98 L84.83 45.37 L88.41 32.47 L77.93 24.13 L91.31 23.54 Z" />
+    <path fill="none" stroke="#111111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M124.00 40.00 C119.22 34.19 121.50 25.85 135.00 20.95 C136.91 33.48 132.02 41.07 124.00 40.00 Z" />
+    <path fill="none" stroke="#111111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" d="M140.00 44.00 C144.15 40.44 143.58 34.18 134.53 28.96 C131.58 37.70 134.12 43.76 140.00 44.00 Z" />
+  </g></svg>

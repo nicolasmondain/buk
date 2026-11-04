@@ -1,0 +1,19 @@
+# Transcripts bruts : paroles des auteurs, gardées en local uniquement
+research/transcripts/*
+!research/transcripts/.gitkeep
+
+__pycache__/
+*.pyc
+.venv/
+dist/
+.DS_Store
+
+# Brouillons de séance personnels (photos de peau, etc.)
+flashs/**/prive/
+
+# Images de blogs analysées : propriété de leurs auteurs, locales uniquement
+research/design/images/
+
+# Fichiers à supprimer à la main
+_to_delete/
+.buk-repo.tgz

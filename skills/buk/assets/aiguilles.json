@@ -1,0 +1,25 @@
+{
+  "_doc": "Catalogue des aiguilles. stroke_mm = épaisseur d'aperçu pour les liners. statut: seed = non encore confirmé par la recherche vidéo ; sourcé = confirmé (voir references/SOURCES.md).",
+  "diametre_defaut": "0.35 mm (#12)",
+  "aiguilles": {
+    "RL3":  {"nom": "Round liner 3",  "famille": "liner",  "stroke_mm": 0.6, "taper": "LT", "usage": "petits détails, poivré, rehauts", "statut": "seed"},
+    "RL5":  {"nom": "Round liner 5",  "famille": "liner",  "stroke_mm": 0.8, "taper": "LT", "usage": "détails, rehauts blancs", "statut": "seed"},
+    "RL7":  {"nom": "Round liner 7",  "famille": "liner",  "stroke_mm": 1.0, "taper": "LT", "usage": "traits intérieurs", "statut": "seed"},
+    "RL9":  {"nom": "Round liner 9",  "famille": "liner",  "stroke_mm": 1.2, "taper": "LT", "usage": "contour (pièces < 8 cm), traits principaux", "statut": "seed"},
+    "RL11": {"nom": "Round liner 11", "famille": "liner",  "stroke_mm": 1.4, "taper": "LT", "usage": "contour extérieur standard", "statut": "seed"},
+    "RL14": {"nom": "Round liner 14", "famille": "liner",  "stroke_mm": 1.7, "taper": "LT", "usage": "contour extérieur des grandes pièces", "statut": "seed"},
+    "RS5":  {"nom": "Round shader 5", "famille": "shader", "taper": "MT", "usage": "très petites zones, rehauts", "statut": "seed"},
+    "RS7":  {"nom": "Round shader 7", "famille": "shader", "taper": "MT", "usage": "whip et remplissage de petites zones, poivré", "statut": "seed"},
+    "RS9":  {"nom": "Round shader 9", "famille": "shader", "taper": "MT", "usage": "remplissage petites zones, angles", "statut": "seed"},
+    "RM5":  {"nom": "Magnum arrondi 5",  "famille": "magnum", "taper": "MT", "usage": "whip dans les zones étroites", "statut": "seed"},
+    "RM7":  {"nom": "Magnum arrondi 7",  "famille": "magnum", "taper": "MT", "usage": "whip petites zones", "statut": "seed"},
+    "RM9":  {"nom": "Magnum arrondi 9",  "famille": "magnum", "taper": "MT", "usage": "whip standard, rouge petites zones", "statut": "seed"},
+    "RM11": {"nom": "Magnum arrondi 11", "famille": "magnum", "taper": "MT", "usage": "rouge plein, whip grandes zones", "statut": "seed"},
+    "RM13": {"nom": "Magnum arrondi 13", "famille": "magnum", "taper": "MT", "usage": "noir plein moyen à grand", "statut": "seed"},
+    "RM15": {"nom": "Magnum arrondi 15", "famille": "magnum", "taper": "MT", "usage": "grandes surfaces pleines", "statut": "seed"},
+    "M7":   {"nom": "Magnum plat 7",  "famille": "magnum", "taper": "MT", "usage": "remplissage noir", "statut": "seed"},
+    "M9":   {"nom": "Magnum plat 9",  "famille": "magnum", "taper": "MT", "usage": "remplissage noir", "statut": "seed"},
+    "M13":  {"nom": "Magnum plat 13", "famille": "magnum", "taper": "MT", "usage": "remplissage noir rapide", "statut": "seed"},
+    "M15":  {"nom": "Magnum plat 15", "famille": "magnum", "taper": "MT", "usage": "très grandes surfaces noires", "statut": "seed"}
+  }
+}

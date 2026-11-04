@@ -1,0 +1,96 @@
+{
+  "titre": "Dague et cœur",
+  "taille_mm": [
+    87.5,
+    132.5
+  ],
+  "machine": "pen",
+  "miroir": false,
+  "avertissements": [],
+  "etapes": [
+    {
+      "ordre": 1,
+      "couche": "contour",
+      "technique": "bold-line",
+      "technique_nom": "Contour extérieur (bold line)",
+      "aiguille": "RL11",
+      "encre": "noir",
+      "tension_v": "8–9",
+      "statut": "seed",
+      "calque_aiguille": "calque-aiguille-rl11-noir.svg",
+      "calque_technique": "calque-technique-bold-line.svg"
+    },
+    {
+      "ordre": 2,
+      "couche": "interieur",
+      "technique": "lining",
+      "technique_nom": "Traits intérieurs (lining)",
+      "aiguille": "RL7",
+      "encre": "noir",
+      "tension_v": "8–9",
+      "statut": "seed",
+      "calque_aiguille": "calque-aiguille-rl7-noir.svg",
+      "calque_technique": "calque-technique-lining.svg"
+    },
+    {
+      "ordre": 3,
+      "couche": "ombrage-lame",
+      "technique": "whip",
+      "technique_nom": "Ombrage au fouet (whip shading)",
+      "aiguille": "RM7",
+      "encre": "noir",
+      "tension_v": "7–8",
+      "statut": "seed",
+      "calque_aiguille": "calque-aiguille-rm7-noir.svg",
+      "calque_technique": "calque-technique-whip.svg"
+    },
+    {
+      "ordre": 3,
+      "couche": "ombrage-coeur",
+      "technique": "whip",
+      "technique_nom": "Ombrage au fouet (whip shading)",
+      "aiguille": "RM9",
+      "encre": "noir",
+      "tension_v": "7–8",
+      "statut": "seed",
+      "calque_aiguille": "calque-aiguille-rm9-noir.svg",
+      "calque_technique": "calque-technique-whip.svg"
+    },
+    {
+      "ordre": 4,
+      "couche": "noir-plein",
+      "technique": "solid-black",
+      "technique_nom": "Noir plein (packing)",
+      "aiguille": "RS9",
+      "encre": "noir",
+      "tension_v": "8.5–10",
+      "statut": "seed",
+      "calque_aiguille": "calque-aiguille-rs9-noir.svg",
+      "calque_technique": "calque-technique-solid-black.svg"
+    },
+    {
+      "ordre": 5,
+      "couche": "rouge",
+      "technique": "solid-red",
+      "technique_nom": "Rouge plein",
+      "aiguille": "RM11",
+      "encre": "rouge",
+      "tension_v": "8–9.5",
+      "statut": "seed",
+      "calque_aiguille": "calque-aiguille-rm11-rouge.svg",
+      "calque_technique": "calque-technique-solid-red.svg"
+    },
+    {
+      "ordre": 6,
+      "couche": "rehauts",
+      "technique": "highlight-white",
+      "technique_nom": "Rehauts blancs",
+      "aiguille": "RL5",
+      "encre": "blanc",
+      "tension_v": "8–9",
+      "statut": "seed",
+      "calque_aiguille": "calque-aiguille-rl5-blanc.svg",
+      "calque_technique": "calque-technique-highlight-white.svg"
+    }
+  ]
+}
