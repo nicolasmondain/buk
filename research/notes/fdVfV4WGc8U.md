@@ -1,7 +1,7 @@
 ---
 video_id: fdVfV4WGc8U
 titre: "Mast Racer Pro Super Hertz 2025 Review & Setup – Full Tattoo Settings Explained + Unboxing!"
-chaine: ""
+chaine: "Fani Meherzi Tattoo"
 url: https://www.youtube.com/watch?v=fdVfV4WGc8U
 langue: en
 note_le: 2026-11-05

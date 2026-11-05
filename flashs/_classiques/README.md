@@ -1,8 +1,8 @@
 # Bibliothèque de flashs classiques
 
-Vrais flashs traditionnels de planches du domaine public (CC0 — Smithsonian American Art Museum,
-Metropolitan Museum of Art ; détail dans `research/design/SOURCES_CC0.md`), convertis au contrat
-buk par `skills/buk/scripts/buk_flash_import.py`. Point de départ de tout nouveau flash : copier le
+Vrais flashs traditionnels de planches du domaine public (CC0 — Smithsonian American Art Museum ; détail dans `research/design/SOURCES_CC0.md`), convertis au contrat
+buk par `skills/buk/scripts/buk_flash_import.py`. Les SVG vivent dans `skills/buk/assets/classiques/`
+(ils partent avec le skill dans `dist/buk.zip`) ; ce dossier ne garde que les aperçus. Point de départ de tout nouveau flash : copier le
 SVG dans `flashs/<nom>/`, adapter, valider, générer les calques.
 
 | Flash | Fichier | État |

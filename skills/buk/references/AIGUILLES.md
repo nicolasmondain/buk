@@ -1,7 +1,10 @@
 # Aiguilles
 
-> Statut : base « seed » rédigée à partir des usages courants du métier. Les points confirmés,
-> nuancés ou contredits par la recherche vidéo sont tracés dans `SOURCES.md`.
+> Statut : sourcé pour RL3, RL5, RL7, RL9, RS9 (recherche vidéo) ; le reste est « seed ».
+> Détail dans `SOURCES.md` et `assets/aiguilles.json`.
+>
+> Kit de départ cité par les sources : RL3 ou RL5, RL9, RM9, RM15, RS5 — 0,35 mm, liners en taper
+> long, magnums en taper standard. Le **RL9** est le liner le plus simple pour débuter.
 
 ## Lire un code d'aiguille
 

@@ -17,7 +17,7 @@ Mode : `$ARGUMENTS` (vide = `collecter` puis `analyser`).
    `research/design/notes/_pages.md`.
 
 ## analyser
-Lance l'agent **flash-analyst** par lots de 3–4 images, plusieurs lots en parallèle. Puis
+Lance l'agent **buk-flash-analyst** par lots de 3–4 images, plusieurs lots en parallèle. Puis
 affiche `research/design/SYNTHESE.md`.
 
 ## appliquer

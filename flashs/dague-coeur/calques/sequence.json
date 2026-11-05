@@ -15,8 +15,8 @@
       "technique_nom": "Contour extérieur (bold line)",
       "aiguille": "RL11",
       "encre": "noir",
-      "tension_v": "8–9",
-      "statut": "seed",
+      "tension_v": "7.5–8.5 V (≈ 90 Hz en mode hertz)",
+      "statut": "sourcé",
       "calque_aiguille": "calque-aiguille-rl11-noir.svg",
       "calque_technique": "calque-technique-bold-line.svg"
     },
@@ -27,8 +27,8 @@
       "technique_nom": "Traits intérieurs (lining)",
       "aiguille": "RL7",
       "encre": "noir",
-      "tension_v": "8–9",
-      "statut": "seed",
+      "tension_v": "7.5–8.5 V (≈ 90 Hz en mode hertz)",
+      "statut": "sourcé",
       "calque_aiguille": "calque-aiguille-rl7-noir.svg",
       "calque_technique": "calque-technique-lining.svg"
     },
@@ -39,8 +39,8 @@
       "technique_nom": "Ombrage au fouet (whip shading)",
       "aiguille": "RM7",
       "encre": "noir",
-      "tension_v": "7–8",
-      "statut": "seed",
+      "tension_v": "5–7 V (mode moteur « doux » si la machine le propose)",
+      "statut": "sourcé",
       "calque_aiguille": "calque-aiguille-rm7-noir.svg",
       "calque_technique": "calque-technique-whip.svg"
     },
@@ -51,8 +51,8 @@
       "technique_nom": "Ombrage au fouet (whip shading)",
       "aiguille": "RM9",
       "encre": "noir",
-      "tension_v": "7–8",
-      "statut": "seed",
+      "tension_v": "5–7 V (mode moteur « doux » si la machine le propose)",
+      "statut": "sourcé",
       "calque_aiguille": "calque-aiguille-rm9-noir.svg",
       "calque_technique": "calque-technique-whip.svg"
     },
@@ -63,8 +63,8 @@
       "technique_nom": "Noir plein (packing)",
       "aiguille": "RS9",
       "encre": "noir",
-      "tension_v": "8.5–10",
-      "statut": "seed",
+      "tension_v": "8–9 V (mode moteur moyen ≈ 90 Hz)",
+      "statut": "sourcé",
       "calque_aiguille": "calque-aiguille-rs9-noir.svg",
       "calque_technique": "calque-technique-solid-black.svg"
     },
@@ -76,7 +76,7 @@
       "aiguille": "RM11",
       "encre": "rouge",
       "tension_v": "8–9.5",
-      "statut": "seed",
+      "statut": "sourcé",
       "calque_aiguille": "calque-aiguille-rm11-rouge.svg",
       "calque_technique": "calque-technique-solid-red.svg"
     },
@@ -88,7 +88,7 @@
       "aiguille": "RL5",
       "encre": "blanc",
       "tension_v": "8–9",
-      "statut": "seed",
+      "statut": "sourcé",
       "calque_aiguille": "calque-aiguille-rl5-blanc.svg",
       "calque_technique": "calque-technique-highlight-white.svg"
     }

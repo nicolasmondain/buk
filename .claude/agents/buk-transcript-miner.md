@@ -1,5 +1,5 @@
 ---
-name: transcript-miner
+name: buk-transcript-miner
 description: Lit UN transcript de vidéo de tatouage (research/transcripts/<id>.md) et en tire une note structurée et paraphrasée dans research/notes/<id>.md, en comparant chaque affirmation aux références actuelles du skill buk. À lancer une fois par transcript, plusieurs en parallèle.
 tools: Read, Write, Glob, Grep, Bash
 model: sonnet

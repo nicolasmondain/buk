@@ -61,6 +61,19 @@ contient une règle de contrôle de 50 mm : la mesurer après impression.
 Sources : [Colin Tattoo — Traditional tattoo stencils](https://colintattoo.com/traditional-tattoo-stencils/)
 (reformulé) et `HISTOIRE_STENCILS.md`.
 
+## Pendant le tatouage : garder le stencil
+
+- **Tamponner** l'excès d'encre plutôt que frotter : chaque essuyage frotté éclaircit le calque.
+  On ne frotte que là où le stencil ne sert plus.
+- Ordonner le travail pour essuyer le moins possible les zones encore à faire (ligner d'abord ce
+  que la main risque d'effacer).
+- Si le stencil s'efface ou devient illisible : tatouer d'abord ce dont on est sûr, avec la
+  référence imprimée à portée — ne jamais deviner.
+- Stencil **simple** : la forme générale et les limites de zones, pas chaque point ni chaque hachure.
+  Un stencil trop chargé devient illisible dès le premier essuyage (c'est pourquoi les calques buk
+  marquent les zones par des pointillés et des codes plutôt que de tout dessiner).
+- Surface très courbe : quelques fentes dans le papier l'aident à épouser la forme.
+
 ## Taille et échelle
 
 `--scale 1.2` agrandit tout le design (traits compris) ; prévoir que les aiguilles du calque

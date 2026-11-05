@@ -22,11 +22,27 @@ Ce fichier passe avant tout le reste. buk le rappelle brièvement, une fois par 
 5. Collecteur DASRI (boîte jaune) pour les cartouches usagées. Jamais à la poubelle ménagère.
 6. Encre versée dans des capsules ; **on ne retrempe jamais dans le flacon**. Le reste est jeté.
 
+## Protocole de gants (le point le plus souvent raté)
+
+- Lavage des mains jusqu'aux coudes avant le montage ; gants dès qu'on touche la zone de travail,
+  y compris pendant l'installation.
+- Dès qu'on a piqué, **tout le poste est contaminé, gants compris**. Pour prendre un flacon ou un
+  mouchoir propre hors poste : retirer les gants, se laver les mains, gants neufs.
+- Aiguilles et encres restent scellées jusqu'au début ; on les ouvre devant la personne.
+- Flacons (savon vert, rinçage) remplis avant de commencer puis filmés ; machine gainée en laissant
+  l'accès aux réglages.
+- Deux godets de rinçage : un pour les noirs, un pour les clairs (sinon le blanc et le rouge
+  grisent). Eau distillée sur peau réelle.
+- Démontage : gants neufs, aiguilles au collecteur, films et sacs aux déchets, godets rincés dans
+  un évier dédié, désinfection du poste, du fauteuil et de l'accoudoir.
+
 ## Préparation de la peau
 
-- Raser à sec avec un rasoir jetable, désinfecter (antiseptique cutané), laisser sécher.
+- Raser avec un rasoir jetable (à la mousse : moins de micro-lésions), désinfecter 2 à 3 fois
+  (antiseptique cutané), laisser sécher.
 - Pose du stencil (voir `CALQUES.md`), séchage 10 à 20 minutes avant de piquer.
-- Vaseline ou baume de travail appliqué avec un abaisse-langue, jamais avec le doigt dans le pot.
+- Vaseline ou baume de travail prélevé avec une spatule en bois, jamais avec le gant dans le pot.
+- Le stencil « au déodorant » est réservé à la peau synthétique : **jamais sur la peau humaine**.
 
 ## Encres et allergies
 

@@ -18,7 +18,7 @@ puis résume en 5 lignes : vidéos cataloguées / transcrites / notées, thèmes
 3. `python3 research/scripts/harvest.py fetch -n <lot>` (choisit d'abord les vidéos qui couvrent
    les thèmes non saturés).
 4. Pour chaque transcript produit et pas encore noté (`research/transcripts/<id>.md` sans
-   `research/notes/<id>.md`), lance l'agent **transcript-miner** avec l'id — tous en parallèle,
+   `research/notes/<id>.md`), lance l'agent **buk-transcript-miner** avec l'id — tous en parallèle,
    dans un seul message.
 5. Quand ils ont fini : `python3 research/scripts/coverage.py` et affiche le tableau.
 6. Reviens à l'étape 2. Arrête-toi aussi si `fetch` ne trouve plus de vidéo exploitable : dis

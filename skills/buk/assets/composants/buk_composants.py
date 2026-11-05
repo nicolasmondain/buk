@@ -117,6 +117,32 @@ class Flash:
         self.couches[couche].append((str(d), direction))
         return self
 
+    @classmethod
+    def depuis_svg(cls, chemin):
+        """Charge un flash existant (importé ou dessiné) pour le retoucher avec les pièces buk.
+
+        Chaque couche du SVG est rangée dans la couche standard correspondante ; on peut ensuite
+        `masquer(...)` une zone (ancien lettrage), ajouter `lettrage(...)`, des gouttes, etc.
+        """
+        import xml.etree.ElementTree as ET
+        tech2couche = {"bold-line": "contour", "lining": "interieur", "solid-red": "rouge", "solid-black": "noir",
+                       "whip": "ombrage", "pepper": "ombrage", "highlight-white": "rehauts"}
+        root = ET.parse(chemin).getroot()
+        vb = [float(v) for v in root.get("viewBox").split()]
+        f = cls(root.get("data-buk-title", Path(chemin).stem), vb[2], vb[3], root.get("data-buk-placement", ""))
+        for g in root:
+            tech = g.get("data-technique")
+            if tech not in tech2couche:
+                continue
+            couche = tech2couche[tech]
+            if couche == "interieur" and g.get("data-needle") == "RL5":
+                couche = "details"
+            for el in g.iter():
+                if el.tag.endswith("path") and el.get("d"):
+                    dirv = el.get("data-direction")
+                    f.add(couche, el.get("d"), float(dirv) if dirv else None)
+        return f
+
     def masquer(self, x1, y1, x2, y2):
         """Découpe tout ce qui a déjà été dessiné dans le rectangle (x1, y1)-(x2, y2).
 

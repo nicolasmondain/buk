@@ -92,10 +92,12 @@ def validate(path: str) -> dict:
     ratios = coverage(d) if not errors else {"noir": 0, "ombrage": 0, "rouge": 0, "blanc": 0, "peau": 0}
     info["ratios_pct"] = ratios
     if not errors:
-        if ratios["noir"] < 12:
-            warns.append(f"Noir plein ≈ {ratios['noir']} % du motif : le style en veut une vraie masse (≈ 20–40 %).")
-        if ratios["rouge"] > 70:
-            warns.append(f"Rouge ≈ {ratios['rouge']} % : réserver le rouge au sujet, ajouter du noir structurant.")
+        # Repères tirés des vraies planches (rose rouge à 70 %, trait seul) : ce sont des conseils.
+        if ratios["noir"] + ratios["ombrage"] < 3 and ratios["rouge"] > 40:
+            warns.append("Conseil : un peu de whip noir à la base des formes (dessous des pétales, des plis) "
+                         "donnerait du volume et aide le rouge à vieillir.")
+        if ratios["rouge"] > 85:
+            warns.append(f"Rouge ≈ {ratios['rouge']} % : presque tout est rouge, garder des réserves de peau.")
         if ratios["blanc"] > 5:
             warns.append(f"Blanc ≈ {ratios['blanc']} % : le blanc se limite à de petits rehauts.")
     if not sil:

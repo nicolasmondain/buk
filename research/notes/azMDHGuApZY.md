@@ -1,7 +1,7 @@
 ---
 video_id: azMDHGuApZY
 titre: "Tattoo Time Lapse 3 Minutes! Stencil to Fully Healed Pikachu!"
-chaine: ""
+chaine: "Jono Smith"
 url: https://www.youtube.com/watch?v=azMDHGuApZY
 langue: en
 note_le: 2026-11-05

@@ -58,7 +58,8 @@ def compute(notes: list[dict], cfg: dict) -> dict:
                 continue
             t = themes[th]
             t["videos"].add(n.get("video_id"))
-            t["channels"].add(n.get("chaine"))
+            if n.get("chaine"):  # une chaîne inconnue ne compte pas comme chaîne distincte
+                t["channels"].add(n.get("chaine"))
             t["claims"] += 1
             acc = c.get("accord")
             if acc in t["accords"]:

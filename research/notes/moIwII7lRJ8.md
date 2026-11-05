@@ -1,7 +1,7 @@
 ---
 video_id: moIwII7lRJ8
 titre: "Tattoo Beginner Mistakes to Avoid | Tips for New Artists + Tattoo Setup Recommendations"
-chaine: ""
+chaine: "Tattooing 101"
 url: https://www.youtube.com/watch?v=moIwII7lRJ8
 langue: en
 note_le: 2026-11-05

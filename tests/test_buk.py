@@ -190,6 +190,36 @@ class TestImport(unittest.TestCase):
             self.assertIn('data-technique="bold-line"', txt)
 
 
+class TestDepot(unittest.TestCase):
+    def test_classic_library_is_valid(self):
+        lib = sorted((ROOT / "skills" / "buk" / "assets" / "classiques").glob("*.svg"))
+        self.assertGreaterEqual(len(lib), 10)
+        for svg in lib:
+            self.assertEqual(validate(svg)["erreurs"], [], svg.name)
+
+    def test_retouche_classique(self):
+        sys.path.insert(0, str(ROOT / "skills" / "buk" / "assets" / "composants"))
+        from buk_composants import Flash
+        from buk_classiques import lettrage
+        f = Flash.depuis_svg(ROOT / "skills" / "buk" / "assets" / "classiques" / "hirondelle_friends.svg")
+        avant = len(f.couches["details"])
+        f.masquer_forme("M27 67.5 L40 70.5 L53 77.5 L62 78.5 L63.5 82.5 L58 85 L46 81.5 L33 77 L26.5 73.5 Z")
+        lettrage(f, "MOM", 46.5, 77.6, 6.2, ang=24)
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "m.svg"
+            f.ecrire(p)
+            self.assertEqual(validate(p)["erreurs"], [])
+        self.assertTrue(f.couches["rouge"])
+        self.assertGreater(avant, 0)
+
+    def test_commands_are_namespaced_buk(self):
+        cmds = ROOT / ".claude" / "commands"
+        self.assertEqual([p.name for p in cmds.glob("*.md")], [], "commandes hors du dossier buk/")
+        self.assertTrue((cmds / "buk" / "flash.md").exists())
+        for agent in (ROOT / ".claude" / "agents").glob("*.md"):
+            self.assertTrue(agent.stem == "buk" or agent.stem.startswith("buk-"), agent.name)
+
+
 class TestData(unittest.TestCase):
     def test_every_recommended_needle_exists(self):
         techniques, needles = buk_lib.load_data()

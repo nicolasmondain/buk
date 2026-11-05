@@ -256,7 +256,7 @@ def tech_block(layers: list[Layer], tech: dict, needles: dict, machine: str) -> 
     badge = (f'<span class="badge source">sourcé ({len(tech.get("sources", []))})</span>' if statut == "sourcé"
              else '<span class="badge seed">seed · à ajuster</span>')
     volts = tech.get("tension_v", {})
-    vtxt = " · ".join(f"{'<b>' if k == machine else ''}{k} {v} V{'</b>' if k == machine else ''}"
+    vtxt = " · ".join(f"{'<b>' if k == machine else ''}{k} {v}{'' if 'V' in v else ' V'}{'</b>' if k == machine else ''}"
                       for k, v in volts.items())
     geste = "".join(f"<li>{esc(g)}</li>" for g in tech.get("geste", []))
     errs = "".join(f"<li>{esc(g)}</li>" for g in tech.get("erreurs", []))
@@ -274,7 +274,7 @@ def tech_block(layers: list[Layer], tech: dict, needles: dict, machine: str) -> 
   </table>
   <div class="k">Réglages (point de départ)</div>
   <div>Tension : {vtxt}<br>Course : {esc(tech.get('course_mm', '—'))} mm · Angle : {esc(tech.get('angle', '—'))}<br>
-  Main : {esc(tech.get('vitesse_main', '—'))}</div>
+  Main : {esc(tech.get('vitesse_main', '—'))}{('<br>Sortie d’aiguille : ' + esc(tech['sortie_aiguille'])) if tech.get('sortie_aiguille') else ''}{('<br>Profondeur : ' + esc(tech['profondeur'])) if tech.get('profondeur') else ''}</div>
   <div class="k">Geste</div><ul>{geste}</ul>
   <div class="k">Réussite</div><div>{esc(tech.get('reussite', ''))}</div>
   <div class="k">Si ça rate</div><ul>{errs}</ul>
@@ -288,7 +288,7 @@ def fiche_html(d: Design, report: dict, preview: str, master: str, sheets: list[
         f"<tr><td><b>{L.order}</b></td><td>{esc(techniques.get(L.technique, {}).get('nom', L.technique))}"
         f"<div class='note'>{esc(L.id)}</div></td><td><b>{esc(L.needle)}</b></td>"
         f"<td><span class='ink' style='background:{INK_SWATCH.get(L.ink, '#111')}'></span>{esc(L.ink)}</td>"
-        f"<td>{esc(techniques.get(L.technique, {}).get('tension_v', {}).get(machine, '—'))} V</td></tr>"
+        f"<td>{esc(techniques.get(L.technique, {}).get('tension_v', {}).get(machine, '—').split(' (')[0].replace(' V', ''))} V</td></tr>"
         for L in layers)
     carts: dict[str, list[str]] = {}
     for L in layers:

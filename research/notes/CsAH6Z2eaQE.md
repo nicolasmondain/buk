@@ -1,7 +1,7 @@
 ---
 video_id: CsAH6Z2eaQE
 titre: "How To Make A Tattoo Stencil | Turn Any Photo Into a Tattoo Design"
-chaine: ""
+chaine: "Daniel Yuck"
 url: https://www.youtube.com/watch?v=CsAH6Z2eaQE
 langue: en
 note_le: 2026-11-05

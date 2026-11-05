@@ -1,7 +1,7 @@
 ---
 video_id: 4bL2nDjRu4g
 titre: "Tattoo Design Shading and Colouring Tips | Gorilla from 3 Angles"
-chaine: ""
+chaine: "thebrokenpuppet"
 url: https://www.youtube.com/watch?v=4bL2nDjRu4g
 langue: en
 note_le: 2026-11-05

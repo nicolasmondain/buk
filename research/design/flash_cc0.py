@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Bibliothèque de flashs classiques importés de planches du domaine public (CC0).
 
-  python3 research/design/flash_cc0.py            # importe tout dans flashs/_classiques/
+  python3 research/design/flash_cc0.py            # importe tout dans skills/buk/assets/classiques/
   python3 research/design/flash_cc0.py rose ancre_usn
 
 Les images sources (non versionnées) vont dans research/design/images/ sous les noms ci-dessous ;
 URL et licences : research/design/SOURCES_CC0.md. Sans les images, les SVG déjà générés dans
-flashs/_classiques/ restent utilisables tels quels.
+skills/buk/assets/classiques/ restent utilisables tels quels.
 """
 import subprocess
 import sys
@@ -14,7 +14,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 IMAGES = ROOT / "research" / "design" / "images"
-OUT = ROOT / "flashs" / "_classiques"
+OUT = ROOT / "skills" / "buk" / "assets" / "classiques"   # SVG : embarqués dans le skill
+RENDUS = ROOT / "flashs" / "_classiques"                   # aperçus pour le README
 SCRIPTS = ROOT / "skills" / "buk" / "scripts"
 
 # nom : (image, échelle de la grille de repérage, (x0, y0, x1, y1) sur cette grille, largeur mm, titre)
@@ -49,7 +50,8 @@ def importer(nom):
     r = subprocess.run([sys.executable, SCRIPTS / "buk_validate.py", svg], capture_output=True, text=True)
     if r.returncode:
         sys.exit(r.stdout)
-    subprocess.run([sys.executable, SCRIPTS / "buk_stencil.py", svg, "--preview-only", "--out", OUT / f"{nom}_rendu"],
+    RENDUS.mkdir(parents=True, exist_ok=True)
+    subprocess.run([sys.executable, SCRIPTS / "buk_stencil.py", svg, "--preview-only", "--out", RENDUS / f"{nom}_rendu"],
                    check=True, capture_output=True)
     print(f"  {nom}: {svg.relative_to(ROOT)}")
     return True

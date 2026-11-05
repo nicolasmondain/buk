@@ -10,6 +10,7 @@ dist/
 
 # Brouillons de séance personnels (photos de peau, etc.)
 flashs/**/prive/
+flashs/prive/
 
 # Images de blogs analysées : propriété de leurs auteurs, locales uniquement
 research/design/images/

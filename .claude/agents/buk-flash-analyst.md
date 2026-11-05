@@ -1,5 +1,5 @@
 ---
-name: flash-analyst
+name: buk-flash-analyst
 description: Analyse des images de tatouages et de flashs old school (photos de blogs, planches, tatouages cicatrisés) pour en tirer des principes de composition et de construction, et nourrir les fiches motifs de buk. Une image ou un petit lot par appel.
 tools: Read, Write, Glob, Grep, Bash
 model: opus

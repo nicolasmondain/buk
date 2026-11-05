@@ -1,6 +1,6 @@
 # Techniques
 
-> Statut : seed. Chaque technique a son équivalent structuré dans `assets/techniques.json`
+> Statut : sourcé (recherche vidéo, 20 vidéos, 6 chaînes — voir `SOURCES.md`). Chaque technique a son équivalent structuré dans `assets/techniques.json`
 > (c'est ce fichier que lisent les scripts pour remplir la fiche des calques).
 
 ## Le stretch (tension de peau) — avant tout le reste

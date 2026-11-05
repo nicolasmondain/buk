@@ -1,7 +1,7 @@
 ---
 video_id: gHHSXoFWTMQ
 titre: "Stipple Shading Explained – Fine Line Tattoo Tutorial"
-chaine: ""
+chaine: "Fani Meherzi Tattoo"
 url: https://www.youtube.com/watch?v=gHHSXoFWTMQ
 langue: en
 note_le: 2026-11-05

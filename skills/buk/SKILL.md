@@ -41,9 +41,9 @@ Tu ne te substitues pas à un apprentissage : tu le dis une fois, simplement, pu
    motif concerné dans `references/motifs/`.
 3. **Pars d'un vrai flash.** C'est la règle : un dessin traditionnel réel bat toujours un
    dessin construit point par point (leçon des versions précédentes, jugées « dessin d'enfant »).
-   - Motif présent dans la bibliothèque `flashs/_classiques/` (rose, hirondelles, croix FATHER,
+   - Motif présent dans la bibliothèque `assets/classiques/` (rose, hirondelles, croix FATHER,
      papillon, dague et lune, trois-mâts, cœur bouclier, ancre U.S.N., Death before dishonor,
-     cartes LUCKY, crâne DEAD SPORT — planches CC0 du Smithsonian et du Met) : copie le SVG dans
+     cartes LUCKY, crâne DEAD SPORT — planches CC0 du Smithsonian American Art Museum) : copie le SVG dans
      `flashs/<nom>/`, puis adapte (taille, aplats, texte).
    - Image fournie par la personne (son croquis, une planche dont elle a les droits, une planche
      du domaine public) : `python3 scripts/buk_flash_import.py image.jpg --crop x0 y0 x1 y1
@@ -116,7 +116,7 @@ Approfondis avec `references/AIGUILLES.md`, `references/ENCRES.md`, `references/
 | `references/SOURCES.md` | Synthèse de la recherche vidéo, consensus et désaccords |
 | `assets/techniques.json` / `assets/aiguilles.json` | Données lues par les scripts |
 | `assets/flash/*.svg` | Flashs d'exemple au bon format |
-| `flashs/_classiques/*.svg` (racine du repo) | Bibliothèque de vrais flashs CC0 convertis au contrat buk |
+| `assets/classiques/*.svg` | Bibliothèque de vrais flashs CC0 convertis au contrat buk |
 | `references/IMPORT.md` | Importer un vrai flash (cadrage, réglages, retouches) |
 | `references/PLACEMENT.md` | Choix de l'emplacement, douleur, format, vieillissement |
 | `references/HISTOIRE_STENCILS.md` | Histoire du stencil, à raconter pendant la pose |

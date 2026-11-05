@@ -1,7 +1,7 @@
 ---
 video_id: WqZ9V8FZPVc
 titre: "BATMAN TATTOO - Lining, Color Packing and MORE - Enjoy the Process"
-chaine: ""
+chaine: "Art-Something"
 url: https://www.youtube.com/watch?v=WqZ9V8FZPVc
 langue: en
 note_le: 2026-11-05

@@ -23,14 +23,32 @@ flash au contrat buk. C'est la voie principale pour un dessin de qualité.
 
 1. `buk_render.py` puis la boucle de `CRITIQUE.md`.
 2. **Lettrage** : les petites lettres manuscrites (banderoles) sortent souvent déformées. Les
-   effacer et reposer le texte avec `lettrage()` / `banderole_texte()` de
-   `assets/composants/buk_classiques.py`.
+   effacer et reposer le texte (même procédure pour changer le texte d'un classique) :
+
+   ```python
+   import sys; sys.path.insert(0, "skills/buk/assets/composants")
+   from buk_composants import Flash
+   from buk_classiques import lettrage
+   f = Flash.depuis_svg("skills/buk/assets/classiques/hirondelle_friends.svg")
+   f.masquer_forme("M27 67.5 L40 70.5 L53 77.5 L62 78.5 L63.5 82.5 L58 85 L46 81.5 L33 77 L26.5 73.5 Z")
+   lettrage(f, "MOM", 46.5, 77.6, 6.2, ang=24)     # centre (mm), hauteur, angle de la banderole
+   f.ecrire("flashs/hirondelle-mom/hirondelle-mom.svg")
+   ```
+   Trouver la forme de la banderole et l'angle sur `buk_render.py` + une grille en mm.
 3. **Couleurs** : le bleu des vieux flashs devient de l'ombrage noir ; le vert devient noir plein.
    Vérifier que ça reste lisible ; sinon passer la zone en peau.
 4. **Taille** : en dessous de ~5 cm, les hachures fines des feuilles se bouchent : les supprimer.
 
 ## Ce qu'on importe, ce qu'on n'importe pas
 
-Domaine public (CC0 : Smithsonian, Met, catégories Wikimedia Commons), dessins de la personne,
+Domaine public (CC0 : planches Smithsonian, catégories Wikimedia Commons — vérifier la qualité du dessin avant d'importer), dessins de la personne,
 flashs achetés avec licence d'usage. Jamais une image de blog, d'Instagram ou d'un artiste vivant
 sans son accord : on l'analyse (principes), on ne la recopie pas.
+
+## Banques d'images (Magnific/Freepik, etc.)
+
+Leurs licences gratuites autorisent l'usage dans **ton** projet final, mais interdisent de mettre
+les fichiers (originaux ou modifiés) dans une collection téléchargeable par d'autres — donc dans
+ce repo public. Pour un motif de banque d'images destiné à **ton** tatouage :
+importer dans `flashs/prive/<nom>/` (ignoré par git), garder la mention d'auteur exigée par la
+licence, ne jamais le committer ni le redistribuer.

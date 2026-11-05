@@ -93,7 +93,9 @@ def add_entry(idx, e, source, priority, themes, limits):
         return False
     title = e.get("title") or ""
     idx["videos"][vid] = {
-        "id": vid, "title": title, "channel": e.get("channel") or e.get("uploader") or "",
+        "id": vid, "title": title,
+        # En mode « flat », YouTube ne renvoie pas toujours la chaîne : on prend celle de la source.
+        "channel": e.get("channel") or e.get("uploader") or (source.split(":", 1)[1] if source.startswith("chaîne:") else ""),
         "url": f"https://www.youtube.com/watch?v={vid}", "duration_s": dur, "priority": priority,
         "sources": [source], "themes_guess": guess_themes(title, themes), "status": "pending",
     }
@@ -204,6 +206,10 @@ def cmd_fetch(args) -> int:
     langs = cfg.get("limits", {}).get("languages", ["fr", "en"])
     idx = load_index()
     need = unsaturated_themes()
+    for v in idx["videos"].values():  # rattrapage des chaînes manquantes
+        if not v.get("channel"):
+            ch = [x.split(":", 1)[1] for x in v.get("sources", []) if x.startswith("chaîne:")]
+            v["channel"] = ch[0] if ch else ""
     pend = [v for v in idx["videos"].values() if v["status"] == "pending"]
     pend.sort(key=lambda v: (-len(set(v["themes_guess"]) & need) if need else 0, v["priority"],
                              -len(v["themes_guess"])))
@@ -227,7 +233,7 @@ def cmd_fetch(args) -> int:
         done += 1
         print(f"  + {v['id']} [{lang}] {v['channel']} — {v['title'][:70]}")
     save_index(idx)
-    print(f"{done} transcript(s) prêts dans research/transcripts/ → lancer l'agent transcript-miner.")
+    print(f"{done} transcript(s) prêts dans research/transcripts/ → lancer l'agent buk-transcript-miner.")
     return 0
 
 

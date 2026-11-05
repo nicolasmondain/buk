@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Régénère les flashs d'exemple des pièces et leurs planches de construction (make motifs)."""
+"""Régénère les flashs d'exemple des pièces et leurs planches de construction (make buk-motifs)."""
 import subprocess
 import sys
 from pathlib import Path

@@ -1,7 +1,7 @@
 ---
 video_id: zbMQZvx3NRY
 titre: "All Products You Need to Start Tattooing + Workstation Setup"
-chaine: ""
+chaine: "Fani Meherzi Tattoo"
 url: https://www.youtube.com/watch?v=zbMQZvx3NRY
 langue: en
 note_le: 2026-11-05

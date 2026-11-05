@@ -1,6 +1,7 @@
 # Encres
 
-> Statut : seed. Voir `SOURCES.md` pour ce qui est confirmé par la recherche vidéo.
+> Statut : partiellement sourcé (voir `SOURCES.md`). Toute encre se secoue avant usage ; une encre
+> trop épaisse nourrit mal l'aiguille et se fluidifie avec une solution de dilution compatible.
 
 ## Les trois encres de buk
 

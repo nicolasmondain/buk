@@ -1,202 +1,258 @@
-# buk — skill de tatoueur old school
+# ⚓ buk — tatoueur old school pour Claude
 
 **buk** est un skill Claude qui joue le rôle d'un tatoueur traditionnel (American traditional /
 old school) en **noir, rouge et blanc**. Avec un dermographe et du papier transfert, il :
 
-- **dessine** un flash sur demande et le **met à jour** à chaque retour ;
-- **génère les calques de transfert** (stencils) — un calque maître, plus un calque **par
-  aiguille** ou **par type d'ombrage** — et une **fiche technique imprimable** qui donne pour
-  chaque calque l'aiguille, l'encre, les réglages machine, le geste et les erreurs à éviter ;
-- **guide la séance** pas à pas, de la préparation du poste aux soins.
-
-Ses connaissances techniques se construisent à partir de **vidéos YouTube** : un pipeline liste
-les vidéos de chaînes choisies, récupère leurs transcripts, et un agent en tire des notes
-paraphrasées jusqu'à ce que la matière soit suffisante — puis un second agent les fond dans le
-skill.
-
-<img src="flashs/dague-coeur/calques/apercu.svg" alt="Flash d'exemple : dague et cœur" width="260">
-
-> ⚠️ buk ne remplace pas un apprentissage. Il impose l'hygiène (cartouches stériles à usage
-> unique, film barrière, gants), refuse les cas à risque et rappelle le cadre légal (en France :
-> formation hygiène de 21 h et déclaration ARS pour tatouer autrui). Le rouge est le pigment le
-> plus allergisant : test cutané conseillé. Voir [`SECURITE.md`](skills/buk/references/SECURITE.md).
-
-## Arborescence
-
-```
-buk/
-├── skills/buk/                  ← le skill (ce qu'on installe dans Claude)
-│   ├── SKILL.md                 point d'entrée : rôle, workflow, quand lire quoi
-│   ├── references/              savoir technique (chargé à la demande)
-│   │   ├── SECURITE.md          hygiène, allergies, légalité, soins
-│   │   ├── DESIGN_OLD_SCHOOL.md règles du style, palette, motifs
-│   │   ├── SVG_CONTRAT.md       format des flashs (couches annotées)
-│   │   ├── CHECKLIST_DESIGN.md  contrôle qualité avant livraison
-│   │   ├── CALQUES.md           impression (miroir ou non), pose du stencil
-│   │   ├── SEANCE.md            déroulé complet d'une séance
-│   │   ├── AIGUILLES.md · ENCRES.md · MACHINE.md · TECHNIQUES.md
-│   │   └── SOURCES.md           synthèse de la recherche vidéo (générée)
-│   ├── assets/
-│   │   ├── techniques.json      réglages + gestes par technique (lus par les scripts)
-│   │   ├── aiguilles.json       catalogue des configurations
-│   │   └── flash/               flashs d'exemple au bon format
-│   └── scripts/
-│       ├── buk_validate.py      vérifie un flash (contrat, palette, proportions)
-│       ├── buk_stencil.py       aperçu + calques + fiche.html + sequence.json
-│       ├── buk_trace.py         photo/croquis → base SVG à redessiner (OpenCV)
-│       └── buk_lib.py           géométrie et lecture SVG (stdlib uniquement)
-├── research/                    ← la recherche vidéo
-│   ├── sources.yaml             chaînes et requêtes YouTube  ← à compléter
-│   ├── themes.yaml              thèmes à couvrir + critère d'arrêt
-│   ├── scripts/harvest.py       catalogue, transcrit (yt-dlp)
-│   ├── scripts/coverage.py      mesure la couverture, dit quand s'arrêter
-│   ├── notes/                   une note paraphrasée par vidéo (versionnée)
-│   └── transcripts/             transcripts bruts (ignorés par git)
-├── .claude/
-│   ├── agents/                  buk · transcript-miner · buk-synthese
-│   ├── commands/                /buk-flash · /buk-calques · /buk-seance · /buk-research
-│   └── skills/buk → ../../skills/buk
-├── flashs/                      tes flashs et leurs calques
-└── tests/                       tests de bout en bout
-```
-
-## Démarrage
-
-```bash
-git clone https://github.com/nicolasmondain/buk && cd buk
-make link                        # relie le skill pour Claude Code
-make test                        # vérifie que tout fonctionne (Python ≥ 3.9, aucune dépendance)
-make demo                        # régénère les calques du flash d'exemple
-open flashs/dague-coeur/calques/fiche.html
-```
-
-Les scripts du skill n'utilisent que la bibliothèque standard Python. La recherche vidéo
-demande `pip install -r requirements.txt` (yt-dlp, pyyaml) ; le tracé de photos
-`pip install -r requirements-trace.txt` (OpenCV).
-
-## Utilisation avec Claude Code (dans ce repo)
-
-```text
-/buk-flash hirondelle avec banderole vierge, 9 cm, poitrine gauche
-/buk-flash modifier hirondelle : ailes plus ouvertes, plus de noir dans la queue
-/buk-calques hirondelle needle --machine rotary
-/buk-seance hirondelle
-/buk-research            # lance / poursuit la recherche vidéo jusqu'à saturation
-/buk-research status
-```
-
-Ou simplement : « buk, je veux une rose old school de 8 cm sur le mollet ».
-
-## Installer le skill dans claude.ai / Claude Desktop
-
-```bash
-make package                     # → dist/buk.zip
-```
-
-Puis **Paramètres → Capacités → Skills → Importer** `dist/buk.zip` (l'exécution de code doit
-être activée). Le skill se déclenche dès qu'on parle de flash, de calque ou de tatouage old school.
-
-## Calques : par aiguille ou par technique
-
-```bash
-python3 skills/buk/scripts/buk_stencil.py flashs/rose/rose.svg --by needle
-python3 skills/buk/scripts/buk_stencil.py flashs/rose/rose.svg --by technique
-python3 skills/buk/scripts/buk_stencil.py flashs/rose/rose.svg --by both --mirror --machine coil --scale 1.2
-```
-
-| Sortie | Rôle |
-|---|---|
-| `calque-maitre.svg` | le stencil à poser : traits pleins, limites de zones en pointillé, codes W/P/N/R/B |
-| `calque-aiguille-<aiguille>-<encre>.svg` | tout ce qu'on fait avec une cartouche |
-| `calque-technique-<technique>.svg` | tout ce qu'on fait avec un même geste (lining, whip, noir plein…) |
-| `fiche.html` | A4 imprimable à l'échelle 1:1 : aperçu, déroulé, matériel, une page par calque avec réglages et gestes |
-| `sequence.json` | ordre de séance pour l'agent |
-
-Le papier décide du miroir : thermique ou hectographique → pas de miroir ; papier jet d'encre posé
-face contre la peau → `--mirror` (voir [`CALQUES.md`](skills/buk/references/CALQUES.md)).
-
-## Bibliothèque de vrais flashs
-
-buk part de **vrais flashs traditionnels** : 12 motifs tirés de planches du domaine public (CC0,
-Smithsonian et Met, vers 1900–1950) et convertis au contrat buk par
-`skills/buk/scripts/buk_flash_import.py` (trait de plume → lignes à épaisseur d'aiguille, aplats
-rouge/noir, bleu → ombrage). Liste : [`flashs/_classiques/`](flashs/_classiques/README.md) ;
-sources : [`research/design/SOURCES_CC0.md`](research/design/SOURCES_CC0.md).
+- **part d'un vrai flash** (bibliothèque de planches du domaine public, ou ton croquis) et
+  l'**adapte** à ta demande (taille, texte, emplacement) ;
+- **génère les calques de transfert** — un calque maître, plus un calque **par aiguille** ou
+  **par type d'ombrage** — et une **fiche imprimable** qui donne pour chaque calque l'aiguille,
+  l'encre, les réglages machine, le geste et les erreurs à éviter ;
+- **guide la séance** pas à pas, de la préparation du poste aux soins ;
+- s'appuie sur une **recherche vidéo** (20 tutoriels, 6 chaînes) synthétisée dans le skill.
 
 | | | | |
 |---|---|---|---|
 | <img src="flashs/_classiques/rose_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/hirondelle_friends_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/ancre_usn_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/cartes_lucky_rendu/apercu.svg" height="160"> |
 | <img src="flashs/_classiques/papillon_rendu/apercu.svg" height="140"> | <img src="flashs/_classiques/dague_lune_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/trois_mats_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/coeur_bouclier_rendu/apercu.svg" height="160"> |
 
-Tes propres croquis passent par le même convertisseur :
-`python3 skills/buk/scripts/buk_flash_import.py croquis.jpg --largeur-mm 70 --titre "…" -o flashs/x/x.svg`.
+> ⚠️ buk ne remplace pas un apprentissage. Il impose l'hygiène (cartouches stériles à usage
+> unique, film barrière, protocole de gants), refuse les cas à risque et rappelle le cadre légal
+> (en France : formation hygiène de 21 h et déclaration ARS pour tatouer autrui). Le rouge est le
+> pigment le plus allergisant : test cutané conseillé. Voir
+> [`SECURITE.md`](skills/buk/references/SECURITE.md).
 
-## Pièces dessinées par buk (secours)
+---
 
-buk dessine à partir d'une **bibliothèque de pièces** (rose, hirondelle, feuille, banderole,
-goutte, étoile nautique, lettrage, fer à cheval, dés, cartes, ancre, crâne, cœur, dague, panthère,
-serpent, flammes, toile d'araignée, bateau, phare, pin-up) et de **fiches de grammaire** par motif
-(`skills/buk/references/motifs/`). Avant de montrer un dessin, il le **regarde** :
-`buk_render.py` produit un aperçu, une miniature de 2 cm (lisibilité), une carte des valeurs
-(noir / ombre / clair) et une planche d'étapes ; buk les lit, corrige les pires défauts et
-recommence (protocole : `references/CRITIQUE.md`). Ses goûts s'affinent avec tes retours
-(`references/PREFERENCES.md`).
+## Vue d'ensemble
 
-| Rose | Hirondelles | Pièces |
-|---|---|---|
-| <img src="flashs/_motifs/rose_rendu/apercu.svg" width="220"> | <img src="flashs/_motifs/hirondelles_rendu/apercu.svg" width="300"> | <img src="flashs/_motifs/pieces_rendu/apercu.svg" width="300"> |
+```mermaid
+flowchart LR
+    subgraph Sources["Sources"]
+        CC0["Planches CC0<br/>Smithsonian"]
+        TOI["Tes croquis"]
+        YT["Tutoriels YouTube<br/>(20 vidéos, 6 chaînes)"]
+        BLOGS["Blogs / guides<br/>(analyse seulement)"]
+    end
+    subgraph Skill["skills/buk — le skill"]
+        LIB["assets/classiques<br/>12 vrais flashs"]
+        REF["references/<br/>technique, sécurité,<br/>placement, motifs"]
+        DATA["techniques.json<br/>aiguilles.json"]
+        SCR["scripts/<br/>import · valide · rendu · calques"]
+    end
+    subgraph Sortie["Ce que tu obtiens"]
+        SVG["Flash SVG (mm)"]
+        CAL["Calques<br/>maître · par aiguille · par technique"]
+        FICHE["fiche.html A4 1:1"]
+        SEQ["Séance guidée<br/>étape par étape"]
+    end
+    CC0 -->|buk_flash_import| LIB
+    TOI -->|buk_flash_import| SVG
+    YT -->|/buk:research| DATA
+    YT --> REF
+    BLOGS -->|/buk:design-research| REF
+    LIB --> SVG
+    SCR --> SVG
+    SVG -->|buk_stencil| CAL
+    CAL --> FICHE
+    DATA --> FICHE
+    FICHE --> SEQ
+    REF --> SEQ
+```
 
-| Classiques | Compositions |
+## Démarrage
+
+```bash
+git clone https://github.com/nicolasmondain/buk && cd buk
+make buk-link        # relie le skill pour Claude Code (.claude/skills/buk)
+make buk-test        # 19 tests de bout en bout
+make buk-demo        # régénère le flash d'exemple et ses calques
+open flashs/dague-coeur/calques/fiche.html
+```
+
+| Besoin | Installation |
 |---|---|
-| <img src="flashs/_motifs/classiques_rendu/apercu.svg" width="420"> | <img src="flashs/_motifs/compositions_rendu/apercu.svg" width="420"> |
-| **Bestiaire** | **Marine et pin-up** |
-| <img src="flashs/_motifs/bestiaire_rendu/apercu.svg" width="420"> | <img src="flashs/_motifs/marine_pinup_rendu/apercu.svg" width="420"> |
+| Validation, calques, fiche | rien : Python ≥ 3.9, bibliothèque standard |
+| Import de vrais dessins (`buk_flash_import.py`) | `pip install -r requirements-trace.txt` (OpenCV, numpy, pillow) |
+| Rendu PNG pour la critique visuelle (`buk_render.py`) | `brew install librsvg` (ou cairosvg, ou Chrome) |
+| Recherche vidéo | `pip install -r requirements.txt` (yt-dlp, pyyaml) |
 
-Aussi : lettrage block A–Z / 0–9 (`flashs/_motifs/lettrage.svg`), cœur, dague et enseignes.
+## Toutes les commandes
 
-Planches de construction : `flashs/_motifs/*.planche.svg`. Rendu PNG : `brew install librsvg`.
+Commandes Claude Code (dans le repo) — toutes préfixées `buk:` :
 
-**Recherche design** (`/buk-design-research`) : `research/design/sources_design.yaml` liste des
-guides, blogs et archives old school ; l'agent `flash-analyst` regarde les images collectées,
-les mesure (`research/design/analyse_image.py` : proportions noir/rouge, épaisseur des traits,
-équilibre, lisibilité) et en tire des règles proposées dans `research/design/SYNTHESE.md`.
-On en extrait des principes ; on ne recopie jamais un flash.
+| Commande | Ce qu'elle fait |
+|---|---|
+| `/buk:flash rose et dague, 10 cm, avant-bras` | Part du classique le plus proche (ou d'un import), l'adapte, le valide, le critique visuellement, montre l'aperçu |
+| `/buk:flash modifier rose : texte MOM sur la banderole` | Retouche le SVG existant |
+| `/buk:import croquis.jpg` | Convertit un vrai dessin en flash buk (droits vérifiés) |
+| `/buk:calques rose both --machine rotary` | Calques + fiche imprimable + séquence de séance |
+| `/buk:seance rose` | Guide la séance, une étape à la fois |
+| `/buk:research` · `status` · `synthese` | Recherche vidéo : collecte → notes → synthèse dans le skill |
+| `/buk:design-research` | Analyse d'images de référence (principes, jamais de copie) |
+
+Ou simplement, en langage naturel : « buk, je veux une rose old school de 8 cm sur le mollet ».
+
+Agents : `buk` (le tatoueur), `buk-transcript-miner`, `buk-synthese`, `buk-flash-analyst`.
+Cibles make : `make buk-help` les liste toutes (`buk-link`, `buk-test`, `buk-demo`,
+`buk-classiques`, `buk-motifs`, `buk-package`, `buk-research-list`, `buk-research-fetch`,
+`buk-coverage`, `buk-clean`).
+
+## Du flash à la peau
+
+```mermaid
+flowchart TD
+    A["Demande<br/>« hirondelle MOM, 7 cm, avant-bras »"] --> B{"Un classique<br/>proche existe ?"}
+    B -- oui --> C["Copier assets/classiques/…svg<br/>dans flashs/&lt;nom&gt;/"]
+    B -- "non, j'ai un dessin" --> D["/buk:import<br/>buk_flash_import.py"]
+    B -- "non, élément simple" --> E["Pièces assets/composants/<br/>(banderole, lettrage, gouttes…)"]
+    C --> F["Adapter : Flash.depuis_svg<br/>masquer_forme + lettrage"]
+    D --> F
+    E --> F
+    F --> G["buk_validate.py<br/>contrat, palette, aiguilles"]
+    G --> H["buk_render.py<br/>aperçu · miniature 2 cm · valeurs · étapes"]
+    H --> I{"Critique visuelle<br/>CRITIQUE.md"}
+    I -- "défauts" --> F
+    I -- "OK (≤ 3 tours)" --> J["/buk:calques<br/>buk_stencil.py"]
+    J --> K["calque-maitre.svg<br/>+ par aiguille / par technique"]
+    J --> L["fiche.html A4 1:1<br/>réglages · geste · erreurs"]
+    J --> M["sequence.json"]
+    K --> N["Impression 100 %<br/>(miroir selon le papier)"]
+    M --> O["/buk:seance"]
+    L --> O
+```
+
+### Exemple réel (essai de bout en bout)
+
+« L'hirondelle FRIENDS de la planche, mais avec MOM » :
+
+```python
+import sys; sys.path.insert(0, "skills/buk/assets/composants")
+from buk_composants import Flash
+from buk_classiques import lettrage
+f = Flash.depuis_svg("skills/buk/assets/classiques/hirondelle_friends.svg")
+f.masquer_forme("M27 67.5 L40 70.5 L53 77.5 L62 78.5 L63.5 82.5 L58 85 L46 81.5 L33 77 L26.5 73.5 Z")
+lettrage(f, "MOM", 46.5, 77.6, 6.2, ang=24)
+f.ecrire("flashs/hirondelle-mom/hirondelle-mom.svg")
+```
+
+```bash
+python3 skills/buk/scripts/buk_validate.py flashs/hirondelle-mom/hirondelle-mom.svg
+python3 skills/buk/scripts/buk_stencil.py flashs/hirondelle-mom/hirondelle-mom.svg --by both --machine rotary
+```
+
+## Les calques
+
+| Sortie | Rôle |
+|---|---|
+| `calque-maitre.svg` | le stencil à poser : traits pleins, limites de zones en pointillé, codes W/P/N/R/B |
+| `calque-aiguille-<aiguille>-<encre>.svg` | tout ce qu'on fait avec une cartouche |
+| `calque-technique-<technique>.svg` | tout ce qu'on fait avec un même geste (lining, whip, noir plein…) |
+| `fiche.html` | A4 imprimable à l'échelle 1:1 : aperçu, déroulé, matériel, une page par calque avec réglages (tension, course, sortie d'aiguille), geste, critère de réussite, erreurs |
+| `sequence.json` | ordre de séance pour l'agent |
+
+Options : `--by needle|technique|both`, `--machine pen|rotary|coil`, `--scale 1.2`, `--mirror`.
+Le papier décide du miroir : thermique ou hectographique → pas de miroir ; jet d'encre posé face
+contre la peau → `--mirror` ([`CALQUES.md`](skills/buk/references/CALQUES.md), avec la pose et la
+[petite histoire du stencil](skills/buk/references/HISTOIRE_STENCILS.md)).
+
+## La séance
+
+```mermaid
+flowchart LR
+    P0["Poste<br/>film, gants,<br/>godets noirs / clairs"] --> P1["Peau<br/>rasage, désinfection,<br/>stencil, séchage"]
+    P1 --> S1["1 · Contour<br/>RL11 · ≈ 8 V"]
+    S1 --> S2["2 · Traits intérieurs<br/>RL5–7"]
+    S2 --> S3["3 · Whip<br/>RM9 · 5–7 V"]
+    S3 --> S4["4 · Noir plein<br/>RM13"]
+    S4 --> S5["5 · Rouge<br/>cartouche neuve"]
+    S5 --> S6["6 · Blanc<br/>en dernier"]
+    S6 --> F["Soins<br/>+ retouche 4–6 sem."]
+```
+
+Les réglages viennent de [`techniques.json`](skills/buk/assets/techniques.json), sourcés par la
+recherche vidéo ([`SOURCES.md`](skills/buk/references/SOURCES.md)) ; l'emplacement et la douleur
+par zone dans [`PLACEMENT.md`](skills/buk/references/PLACEMENT.md).
+
+## L'import de vrais dessins
+
+```mermaid
+flowchart LR
+    I["Image<br/>(planche CC0, croquis)"] --> P["Papier de référence<br/>(couleur médiane)"]
+    P --> T["Trait de plume<br/>black-hat → squelette<br/>→ raccords → lissage"]
+    P --> C["Couleurs relatives<br/>au papier"]
+    T --> L["lining RL5<br/>0,8 mm"]
+    T --> S["Silhouette<br/>bold-line RL11"]
+    C --> R["Régions fermées<br/>par les traits"]
+    R --> Z["rouge → solid-red<br/>noir/vert → solid-black<br/>bleu → whip"]
+    L & S & Z --> V["SVG au contrat buk"]
+```
+
+On n'importe que ce qu'on a le droit d'utiliser : domaine public (CC0), tes dessins. Les images
+de blogs, Pinterest ou d'artistes vivants servent à l'**analyse**, jamais à la copie ; une image
+de banque d'images va dans `flashs/prive/` (ignoré par git). Détails :
+[`IMPORT.md`](skills/buk/references/IMPORT.md), sources :
+[`SOURCES_CC0.md`](research/design/SOURCES_CC0.md).
 
 ## La recherche vidéo
 
-1. Ajoute tes chaînes dans [`research/sources.yaml`](research/sources.yaml) (nom suffit, l'URL est
-   retrouvée) et ajuste les requêtes.
-2. `/buk-research` dans Claude Code. La boucle :
-   `harvest.py list` → `harvest.py fetch -n 5` (vidéos qui couvrent les thèmes manquants
-   d'abord) → un agent `transcript-miner` par transcript, en parallèle → `coverage.py`.
-3. **Arrêt automatique** quand chaque thème requis de [`themes.yaml`](research/themes.yaml) est
-   couvert par ≥ 3 vidéos de ≥ 2 chaînes, ou quand les dernières vidéos n'apportent plus rien de
-   nouveau (< 15 % d'affirmations nouvelles), ou au plafond de 60 vidéos.
-4. `buk-synthese` met à jour `techniques.json`, `aiguilles.json`, les références et
-   `SOURCES.md` ; les valeurs confirmées par plusieurs chaînes passent de **seed** à **sourcé**
-   (badge visible sur la fiche).
-
-Droits d'auteur : les transcripts restent en local (`.gitignore`) ; le repo ne contient que des
-notes **reformulées** avec lien vers la vidéo source.
-
-Sans terminal, `harvest.py` doit tourner sur une machine qui accède à YouTube (ton Mac) :
-`pip install -r requirements.txt && python3 research/scripts/harvest.py list`.
-
-## Le format d'un flash
-
-Un flash est un SVG en millimètres dont chaque couche `<g>` dit **quoi**, **avec quoi** et
-**quand** :
-
-```xml
-<g id="contour" data-buk-kind="line" data-technique="bold-line"
-   data-needle="RL11" data-ink="noir" data-order="1"> … </g>
-<g id="ombrage" data-buk-kind="zone" data-technique="whip"
-   data-needle="RM9" data-ink="noir" data-order="3" data-direction="-45"> … </g>
+```mermaid
+flowchart LR
+    SRC["sources.yaml<br/>10 chaînes, 11 requêtes"] --> LIST["harvest.py list<br/>catalogue"]
+    LIST --> FETCH["harvest.py fetch<br/>transcrit d'abord ce qui<br/>couvre les thèmes manquants"]
+    FETCH --> MINE["buk-transcript-miner<br/>1 note paraphrasée / vidéo"]
+    MINE --> COV{"coverage.py<br/>thèmes saturés ?<br/>nouveauté &lt; 15 % ?"}
+    COV -- non --> FETCH
+    COV -- "oui → STOP" --> SYN["buk-synthese<br/>seed → sourcé"]
+    SYN --> SK["techniques.json · aiguilles.json<br/>MACHINE · TECHNIQUES · SOURCES"]
 ```
 
-Détails : [`SVG_CONTRAT.md`](skills/buk/references/SVG_CONTRAT.md).
+État : **20 vidéos, 6 chaînes, 135 affirmations, synthèse faite** — toutes les techniques sont
+au statut *sourcé*. Les transcripts restent en local (`.gitignore`) ; le repo ne contient que des
+notes reformulées, avec lien vers chaque vidéo.
+
+## Pièces dessinées (secours) et critique visuelle
+
+Pour un élément simple qui n'existe pas dans un vrai flash, buk dispose de pièces
+paramétrables (`skills/buk/assets/composants/` : banderole, lettrage block A–Z/0–9, gouttes,
+étoile nautique, fer à cheval, dés, cartes, ancre, crâne, cœur, dague, panthère, serpent,
+flammes, toile, bateau, phare, pin-up) et de fiches de grammaire par motif
+(`references/motifs/`). Avant de montrer quoi que ce soit, il **regarde** son dessin
+(`buk_render.py` : aperçu, miniature 2 cm, carte des valeurs, planche d'étapes) et corrige.
+Planches : `flashs/_motifs/`.
+
+## Arborescence
+
+```
+buk/
+├── skills/buk/                  ← le skill (ce qu'on installe dans Claude)
+│   ├── SKILL.md                 point d'entrée : rôle, déroulé, quand lire quoi
+│   ├── references/              sécurité, placement, technique, calques, motifs, sources
+│   ├── assets/
+│   │   ├── classiques/          12 vrais flashs CC0 au contrat buk
+│   │   ├── composants/          pièces paramétrables (+ Flash.depuis_svg pour retoucher)
+│   │   ├── techniques.json      réglages + gestes par technique (sourcés)
+│   │   └── aiguilles.json       catalogue des configurations
+│   └── scripts/                 buk_flash_import · buk_validate · buk_render · buk_stencil …
+├── research/                    recherche vidéo (notes, couverture) et design (CC0, analyses)
+├── .claude/
+│   ├── agents/                  buk · buk-transcript-miner · buk-synthese · buk-flash-analyst
+│   ├── commands/buk/            /buk:flash · import · calques · seance · research · design-research
+│   └── skills/buk → ../../skills/buk
+├── flashs/                      tes flashs (prive/ non versionné), _classiques/ et _motifs/ (aperçus)
+└── tests/                       tests de bout en bout
+```
+
+## Installer le skill dans claude.ai / Claude Desktop
+
+```bash
+make buk-package     # → dist/buk.zip (skill + bibliothèque de classiques)
+```
+
+Puis **Paramètres → Capacités → Skills → Importer** `dist/buk.zip` (exécution de code activée).
 
 ## Licence
 
-Code sous licence MIT. Les notes de recherche citent leurs sources ; les vidéos restent la
+Code sous licence MIT. Flashs de la bibliothèque : planches du Smithsonian American Art Museum,
+CC0. Les notes de recherche citent leurs sources ; les vidéos et images de référence restent la
 propriété de leurs auteurs.

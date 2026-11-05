@@ -1,6 +1,6 @@
 # Synthèse design — session du 2026-11-05
 
-30 images, 9 lots `flash-analyst`, notes dans `research/design/notes/` (une par image + `_pages.md`).
+30 images, 9 lots `buk-flash-analyst`, notes dans `research/design/notes/` (une par image + `_pages.md`).
 Sources : Tattooing 101 (3 pages), Envato Tuts+, Apollo Tattoo, ATS, Tattoodo, Good Graces.
 
 **Images inexploitables ou mal nommées** (à re-collecter) :
@@ -128,7 +128,7 @@ Toutes les valeurs chiffrées ci-dessous sont des **points de départ**, mesuré
 10. **Hirondelle — options** : `pose`, `queue`, `rouge_ventre` ; groupe de 3 dans le flash
     d'exemple. **Panthère rampante** dans `buk_bestiaire.py`.
 
-Après toute proposition qui touche le code ou les flashs : `make test` puis `make demo`.
+Après toute proposition qui touche le code ou les flashs : `make buk-test` puis `make buk-demo`.
 
 ## À faire à la prochaine collecte
 - Re-chercher le vrai schéma des styles d'ailes (Tattooing 101) et une vraie hirondelle sur peau.

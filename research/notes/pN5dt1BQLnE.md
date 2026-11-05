@@ -1,7 +1,7 @@
 ---
 video_id: pN5dt1BQLnE
 titre: "How To Tattoo Dotwork! Everything Covered From Machine Setup to Stencil Making +The MASSIVE MISTAKE!"
-chaine: ""
+chaine: "Jono Smith"
 url: https://www.youtube.com/watch?v=pN5dt1BQLnE
 langue: en
 note_le: 2026-11-05

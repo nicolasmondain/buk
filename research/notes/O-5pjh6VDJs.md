@@ -1,7 +1,7 @@
 ---
 video_id: O-5pjh6VDJs
 titre: "Tattoo Practice Skins! Performance Testing Lining, Shading Colour Packing & More! Which One Wins?"
-chaine: ""
+chaine: "Jono Smith"
 url: https://www.youtube.com/watch?v=O-5pjh6VDJs
 langue: en
 note_le: 2026-11-05

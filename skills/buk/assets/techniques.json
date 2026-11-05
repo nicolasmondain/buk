@@ -5,9 +5,19 @@
       "nom": "Contour extérieur (bold line)",
       "code": "",
       "kind": "line",
-      "encres": ["noir"],
-      "aiguilles_conseillees": ["RL11", "RL9", "RL14"],
-      "tension_v": {"coil": "7.5–8.5", "rotary": "8–9", "pen": "8–9"},
+      "encres": [
+        "noir"
+      ],
+      "aiguilles_conseillees": [
+        "RL11",
+        "RL9",
+        "RL14"
+      ],
+      "tension_v": {
+        "coil": "7–8.5",
+        "rotary": "7.5–8.5",
+        "pen": "7.5–8.5 V (≈ 90 Hz en mode hertz)"
+      },
       "course_mm": "3.5–4.2",
       "angle": "45–60°, on tire le trait vers soi",
       "vitesse_main": "lente et constante : l'encre doit remplir toute la largeur de l'aiguille",
@@ -15,147 +25,322 @@
         "Stretch en trois points, appui stable du tranchant de la main.",
         "Machine lancée avant de toucher la peau ; poser, attendre une fraction de seconde, tirer.",
         "Un trait = un seul mouvement le plus long possible ; raccorder en repartant dans le trait.",
-        "Commencer par le bas du dessin et le côté opposé à la main qui travaille."
+        "Commencer par le bas du dessin et le côté opposé à la main qui travaille.",
+        "Vitesse de main et profondeur constantes sur toute la ligne ; accélérer en cours de trait sature de façon inégale.",
+        "Entrer et sortir en douceur : la fin du trait s'effile au lieu de faire un bout épais ; on reprend un trait en reposant l'aiguille dans la partie déjà faite.",
+        "Repasser un trait une fois, deux au maximum ; au-delà, la peau retient mal le pigment.",
+        "Pour un trait plus épais, prendre une aiguille plus grosse plutôt qu'enfoncer davantage (cause n°1 des blowouts). Plus l'aiguille est grosse, plus on avance lentement.",
+        "Essuyer sans frotter : tamponner, ou laisser glisser le papier sur une fine couche de vaseline."
       ],
       "reussite": "Trait plein et régulier après essuyage, bords nets, aucun halo.",
       "erreurs": [
         "Halo flou (blowout) : trop profond ou angle trop couché → remonter la sortie d'aiguille.",
-        "Trait pâle : main trop rapide ou cartouche à court d'encre → recharger, ralentir."
+        "Trait pâle : main trop rapide ou cartouche à court d'encre → recharger, ralentir.",
+        "Trait peu net à frais : il sera pire cicatrisé — le reprendre tout de suite, proprement, une seule fois."
       ],
-      "statut": "seed",
-      "sources": []
+      "statut": "sourcé",
+      "sources": [
+        "gHHSXoFWTMQ",
+        "fdVfV4WGc8U",
+        "zbMQZvx3NRY",
+        "wxNJTvEV0vE",
+        "tIQhfT3dc3w",
+        "moIwII7lRJ8",
+        "coB1ziHQcSo",
+        "9GNnNd9dVxM",
+        "CsAH6Z2eaQE",
+        "TXg915oDEi0"
+      ],
+      "sortie_aiguille": "≈ 4 mm (flux d'encre généreux) ; plus sortie = moins d'encre"
     },
     "lining": {
       "nom": "Traits intérieurs (lining)",
       "code": "",
       "kind": "line",
-      "encres": ["noir"],
-      "aiguilles_conseillees": ["RL7", "RL5", "RL9", "RL3"],
-      "tension_v": {"coil": "7–8", "rotary": "8–9", "pen": "8–9"},
-      "course_mm": "3.5–4.0",
+      "encres": [
+        "noir"
+      ],
+      "aiguilles_conseillees": [
+        "RL7",
+        "RL5",
+        "RL9",
+        "RL3"
+      ],
+      "tension_v": {
+        "coil": "7–8.5",
+        "rotary": "7.5–8.5",
+        "pen": "7.5–8.5 V (≈ 90 Hz en mode hertz)"
+      },
+      "course_mm": "3.5–4.2",
       "angle": "45–60°",
       "vitesse_main": "constante, un peu plus rapide qu'au contour",
       "geste": [
         "Mêmes règles que le contour.",
         "Les petites courbes se font en tournant la peau/le membre, pas le poignet.",
-        "Essuyer souvent pour garder le stencil visible."
+        "Essuyer souvent pour garder le stencil visible.",
+        "Vitesse de main et profondeur constantes sur toute la ligne ; accélérer en cours de trait sature de façon inégale.",
+        "Entrer et sortir en douceur : la fin du trait s'effile au lieu de faire un bout épais ; on reprend un trait en reposant l'aiguille dans la partie déjà faite.",
+        "Repasser un trait une fois, deux au maximum ; au-delà, la peau retient mal le pigment.",
+        "Pour un trait plus épais, prendre une aiguille plus grosse plutôt qu'enfoncer davantage (cause n°1 des blowouts). Plus l'aiguille est grosse, plus on avance lentement.",
+        "Essuyer sans frotter : tamponner, ou laisser glisser le papier sur une fine couche de vaseline."
       ],
       "reussite": "Traits fins et réguliers, nettement plus fins que le contour.",
       "erreurs": [
         "Traits qui se touchent : écart < 1,5 mm sur le design → simplifier le design.",
-        "Trait tremblé : appui instable ou main trop lente."
+        "Trait tremblé : appui instable ou main trop lente.",
+        "Trait peu net à frais : il sera pire cicatrisé — le reprendre tout de suite, proprement, une seule fois."
       ],
-      "statut": "seed",
-      "sources": []
+      "statut": "sourcé",
+      "sources": [
+        "gHHSXoFWTMQ",
+        "fdVfV4WGc8U",
+        "zbMQZvx3NRY",
+        "wxNJTvEV0vE",
+        "tIQhfT3dc3w",
+        "moIwII7lRJ8",
+        "coB1ziHQcSo",
+        "9GNnNd9dVxM",
+        "CsAH6Z2eaQE",
+        "TXg915oDEi0"
+      ],
+      "sortie_aiguille": "≈ 4 mm (flux d'encre généreux) ; plus sortie = moins d'encre"
     },
     "whip": {
       "nom": "Ombrage au fouet (whip shading)",
       "code": "W",
       "kind": "zone",
-      "encres": ["noir"],
-      "aiguilles_conseillees": ["RM9", "RM7", "RS7", "RM11"],
-      "tension_v": {"coil": "6–7.5", "rotary": "7–8", "pen": "7–8"},
-      "course_mm": "2.5–3.5",
+      "encres": [
+        "noir"
+      ],
+      "aiguilles_conseillees": [
+        "RM9",
+        "RM7",
+        "RS7",
+        "RM11"
+      ],
+      "tension_v": {
+        "coil": "5–7",
+        "rotary": "5–7",
+        "pen": "5–7 V (mode moteur « doux » si la machine le propose)"
+      },
+      "course_mm": "3–4.2 (4.2 en mode doux)",
       "angle": "plus droit qu'au lining ; le poignet fait le pendule",
       "vitesse_main": "rapide : nombreux coups de fouet courts plutôt que des passages lents",
       "geste": [
         "Piquer côté sombre (contre le trait / départ de la flèche du calque).",
         "Fouetter vers le côté clair en relevant l'aiguille : elle sort de la peau en fin de geste.",
         "Construire la densité par couches légères ; ne pas insister au même endroit.",
-        "Essuyer pour lire le dégradé régulièrement."
+        "Essuyer pour lire le dégradé régulièrement.",
+        "Entrer, glisser, ressortir : ne jamais racler la peau.",
+        "Le pendule dépose le plus au centre du geste ; le retour de l'aiguille sert à lisser, pas à charger.",
+        "Avant un long dégradé depuis un trait, adoucir d'abord le bord par de petits ovales avec le coin de la magnum.",
+        "Traces d'aiguille visibles : repasser en hachures croisées en changeant de direction à chaque couche.",
+        "Ne pas monter le noir trop haut : garder des réserves de peau, sinon noir sur noir et le motif se perd.",
+        "Viser un peu plus foncé que le rendu voulu : cicatrisé, l'ombrage paraît ≈ 30 % plus clair."
       ],
       "reussite": "Dégradé continu du noir vers la peau, sans traînées, ronds ni trous.",
       "erreurs": [
         "Traînées visibles : coups trop longs ou trop lents.",
         "Dégradé tout gris : départ pas assez dense contre le trait."
       ],
-      "statut": "seed",
-      "sources": []
+      "statut": "sourcé",
+      "sources": [
+        "tIQhfT3dc3w",
+        "moIwII7lRJ8",
+        "coB1ziHQcSo",
+        "V9WRvsAEAmE",
+        "4bL2nDjRu4g",
+        "gHHSXoFWTMQ",
+        "fdVfV4WGc8U",
+        "zbMQZvx3NRY",
+        "wxNJTvEV0vE",
+        "qFbXXqHWDF4",
+        "f2OYQYdlno0"
+      ],
+      "profondeur": "milieu du derme, ≈ 1–2 mm selon la personne",
+      "sortie_aiguille": "≈ 3 mm, à affiner par quarts de tour"
     },
     "pepper": {
       "nom": "Ombrage poivré (stipple)",
       "code": "P",
       "kind": "zone",
-      "encres": ["noir"],
-      "aiguilles_conseillees": ["RL3", "RL5", "RS7"],
-      "tension_v": {"coil": "5.5–7", "rotary": "6.5–7.5", "pen": "6.5–7.5"},
-      "course_mm": "2.5–3.5",
+      "encres": [
+        "noir"
+      ],
+      "aiguilles_conseillees": [
+        "RL3",
+        "RL5",
+        "RL7",
+        "RS7"
+      ],
+      "tension_v": {
+        "coil": "5",
+        "rotary": "5",
+        "pen": "5 V (≈ 100–110 cycles/s)"
+      },
+      "course_mm": "4.2–5 (course longue ; une machine à course courte donne des points trop légers)",
       "angle": "proche de la verticale",
       "vitesse_main": "rapide avec machine lente, ou petits tapotements",
       "geste": [
-        "Points espacés côté clair, serrés côté sombre.",
-        "Ne pas repasser sur un point déjà fait."
+        "Machine presque verticale : trop couchée, on fait des petits traits au lieu de points.",
+        "Piquer droit, ressortir droit, avancer : ne jamais glisser latéralement pendant l'appui.",
+        "La valeur vient de la densité des points, jamais de la profondeur ni d'une encre plus pâle.",
+        "Plusieurs passes croisées ; ne pas border tout le contour en points (on perd le fondu des bords).",
+        "Les zones de noir plein d'un pointillé se font à la magnum, bord fondu, puis on reprend le poivré."
       ],
       "reussite": "Points nets et distincts, densité progressive.",
-      "erreurs": ["Points qui fusionnent en tache : machine trop rapide ou main trop lente."],
-      "statut": "seed",
-      "sources": []
+      "erreurs": [
+        "Points qui fusionnent en tache : machine trop rapide ou main trop lente."
+      ],
+      "statut": "sourcé",
+      "sources": [
+        "gHHSXoFWTMQ",
+        "fdVfV4WGc8U",
+        "zbMQZvx3NRY",
+        "wxNJTvEV0vE",
+        "pN5dt1BQLnE",
+        "O-5pjh6VDJs",
+        "tIQhfT3dc3w",
+        "moIwII7lRJ8",
+        "coB1ziHQcSo"
+      ]
     },
     "solid-black": {
       "nom": "Noir plein (packing)",
       "code": "N",
       "kind": "zone",
-      "encres": ["noir"],
-      "aiguilles_conseillees": ["RM13", "M13", "RS9", "RM15"],
-      "tension_v": {"coil": "7.5–9", "rotary": "8.5–10", "pen": "8.5–10"},
+      "encres": [
+        "noir"
+      ],
+      "aiguilles_conseillees": [
+        "RM13",
+        "M13",
+        "RS9",
+        "RM15"
+      ],
+      "tension_v": {
+        "coil": "7.5–9",
+        "rotary": "8–9",
+        "pen": "8–9 V (mode moteur moyen ≈ 90 Hz)"
+      },
       "course_mm": "3.5–4.2",
       "angle": "proche de la verticale",
       "vitesse_main": "lente : petits cercles serrés qui se chevauchent",
       "geste": [
         "Petite aiguille (RS9) contre les traits et dans les angles, grosse magnum au centre.",
         "Petits cercles qui se chevauchent, ou passages croisés lents.",
-        "Saturer au premier passage ; vérifier en essuyant, combler les trous tout de suite."
+        "Saturer au premier passage ; vérifier en essuyant, combler les trous tout de suite.",
+        "Pointe trop sortie = remplissage difficile : la rentrer progressivement jusqu'à saturation régulière.",
+        "Deux passes maximum au round shader : la pression concentrée abîme vite la peau."
       ],
       "reussite": "Noir uniforme, aucune peau visible, sans gonflement excessif.",
       "erreurs": [
         "Peau qui gonfle et rejette l'encre : zone surtravaillée → passer à une autre zone.",
         "Trous après cicatrisation : main trop rapide."
       ],
-      "statut": "seed",
-      "sources": []
+      "statut": "sourcé",
+      "sources": [
+        "20OjhHOgb5o",
+        "t6441XZbolc",
+        "WqZ9V8FZPVc",
+        "gHHSXoFWTMQ",
+        "fdVfV4WGc8U",
+        "zbMQZvx3NRY",
+        "wxNJTvEV0vE",
+        "tIQhfT3dc3w",
+        "moIwII7lRJ8",
+        "coB1ziHQcSo"
+      ]
     },
     "solid-red": {
       "nom": "Rouge plein",
       "code": "R",
       "kind": "zone",
-      "encres": ["rouge"],
-      "aiguilles_conseillees": ["RM11", "RM9", "RS9"],
-      "tension_v": {"coil": "7.5–8.5", "rotary": "8–9.5", "pen": "8–9.5"},
+      "encres": [
+        "rouge"
+      ],
+      "aiguilles_conseillees": [
+        "RM11",
+        "RM9",
+        "RS9"
+      ],
+      "tension_v": {
+        "coil": "7.5–8.5",
+        "rotary": "8–9.5",
+        "pen": "8–9.5"
+      },
       "course_mm": "3.5–4.0",
       "angle": "proche de la verticale",
       "vitesse_main": "un peu plus lente que pour le noir",
       "geste": [
-        "Cartouche neuve et capsule propre ; essuyer le surplus de noir des traits.",
-        "Petits cercles serrés, remplir jusqu'au contour sans laisser de liseré de peau.",
-        "Rincer et vider la cartouche régulièrement si du noir remonte."
+        "Couleur en dernier : le noir tache la couleur, pas l'inverse. Cartouche neuve, godet de rinçage dédié aux clairs.",
+        "Longer d'abord le bord du noir, puis remplir l'intérieur. Toucher le trait noir n'est pas grave : il ne se teinte pas.",
+        "Petits cercles lents qui se chevauchent ; essuyer après chaque zone pour repérer les manques.",
+        "Léger angle de la machine : plus d'encre déposée, moins de stries ; finir en hachures croisées pour effacer les traces.",
+        "Petite zone : round shader (RS9 ≈ 7 V) ; plus grande : magnum adaptée à la surface.",
+        "Si le rouge « ne monte pas », quitter la zone et revenir plus tard : la rougeur retombe."
       ],
       "reussite": "Rouge vif et uniforme, qui touche le contour partout.",
       "erreurs": [
-        "Rouge qui grise : noir entraîné → essuyer, rincer, changer de cartouche.",
-        "Rouge pâle/troué : main trop rapide, rouge pas assez agité."
+        "Rouge qui grise : noir entraîné → essuyer, rincer dans le godet des clairs, cartouche neuve.",
+        "Rouge pâle ou troué cicatrisé : passes trop rapides ; saturer pleinement dès la première séance."
       ],
-      "statut": "seed",
-      "sources": []
+      "statut": "sourcé",
+      "sources": [
+        "20OjhHOgb5o",
+        "t6441XZbolc",
+        "WqZ9V8FZPVc",
+        "tIQhfT3dc3w",
+        "moIwII7lRJ8",
+        "coB1ziHQcSo",
+        "V9WRvsAEAmE",
+        "4bL2nDjRu4g",
+        "gHHSXoFWTMQ",
+        "fdVfV4WGc8U",
+        "zbMQZvx3NRY",
+        "wxNJTvEV0vE"
+      ]
     },
     "highlight-white": {
       "nom": "Rehauts blancs",
       "code": "B",
       "kind": "zone",
-      "encres": ["blanc"],
-      "aiguilles_conseillees": ["RL5", "RL3", "RS5"],
-      "tension_v": {"coil": "7–8", "rotary": "8–9", "pen": "8–9"},
+      "encres": [
+        "blanc"
+      ],
+      "aiguilles_conseillees": [
+        "RL5",
+        "RL3",
+        "RS5"
+      ],
+      "tension_v": {
+        "coil": "7–8",
+        "rotary": "8–9",
+        "pen": "8–9"
+      },
       "course_mm": "3.5",
       "angle": "proche de la verticale",
       "vitesse_main": "lente, un seul passage propre",
       "geste": [
-        "En tout dernier, cartouche dédiée et propre.",
-        "Petites virgules ou points sur une zone déjà saturée.",
-        "Ne pas repasser : le blanc frais paraît toujours plus fort."
+        "En tout dernier ; le blanc, épais, s'assouplit avec 1–2 gouttes de solution de mélange (sans racler le fond de la capsule).",
+        "Petites virgules ou réserves en bord de forme ; un godet de rinçage séparé des noirs, sinon le blanc grise.",
+        "Le blanc s'estompe un peu en cicatrisant : ne pas forcer, mais ne pas le poser trop timidement."
       ],
       "reussite": "Reflets nets et petits.",
-      "erreurs": ["Blanc qui rosit ou grisit : encre précédente entraînée → cartouche neuve."],
-      "statut": "seed",
-      "sources": []
+      "erreurs": [
+        "Blanc qui rosit ou grisit : encre précédente entraînée → cartouche neuve."
+      ],
+      "statut": "sourcé",
+      "sources": [
+        "V9WRvsAEAmE",
+        "4bL2nDjRu4g",
+        "qFbXXqHWDF4",
+        "f2OYQYdlno0",
+        "gHHSXoFWTMQ",
+        "fdVfV4WGc8U",
+        "zbMQZvx3NRY",
+        "wxNJTvEV0vE"
+      ]
     }
   }
 }

@@ -58,7 +58,7 @@ photographique, couleurs hors palette, détails inférieurs à 2 mm, lettrage cu
 
 ## Composition et lettrage — ce que montrent les planches de référence
 
-Observé sur les planches CC0 du Smithsonian et du Met et sur un tableau Pinterest de flashs
+Observé sur les planches CC0 du Smithsonian et sur un tableau Pinterest de flashs
 traditionnels contemporains (analyse seulement, aucune reprise de dessin) :
 
 - **La banderole enveloppe le sujet** : elle passe devant un cœur, autour d'une dague ou sous

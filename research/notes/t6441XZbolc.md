@@ -1,7 +1,7 @@
 ---
 video_id: t6441XZbolc
 titre: "LINING WITH GREY WASH / ALL SHADES / FRESH VS HEALED"
-chaine: ""
+chaine: "Art-Something"
 url: https://www.youtube.com/watch?v=t6441XZbolc
 langue: en
 note_le: 2026-11-05

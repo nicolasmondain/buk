@@ -15,6 +15,7 @@ et un angle ; le `Flash` range les chemins dans les bonnes couches (aiguille, en
 | Lettrage, banderole à texte | `lettrage(...)`, `banderole_texte(...)` | Voir `LETTRAGE.md` (dans `buk_classiques.py`). |
 | Fer à cheval, dés, cartes, enseignes, ancre, crâne, cœur, dague | voir `CLASSIQUES.md` | Dans `buk_classiques.py`. |
 | Panthère, serpent, flammes, toile, bateau, phare, pin-up | voir `BESTIAIRE.md` | Dans `buk_bestiaire.py`. |
+| Retoucher un flash existant | `Flash.depuis_svg(chemin)` | Recharge un SVG (classique, import) pour y masquer une zone et ajouter des pièces. |
 | Masque | `f.masquer(x1, y1, x2, y2)` | Découpe zones et traits sous un élément rectangulaire posé devant. |
 | Masque par forme | `f.masquer_forme(d)` | Efface les traits de derrière sous n'importe quelle forme (plumes, mâchoires…). |
 | Contour lissé | `lisse(P(...), points, pointes)` | Courbe qui passe par les points, anguleuse seulement aux pointes. |

@@ -1,7 +1,7 @@
 ---
 video_id: 20OjhHOgb5o
 titre: "How to PACK COLOR WITH A ROUND SHADER For Beginners and beyond"
-chaine: ""
+chaine: "Art-Something"
 url: https://www.youtube.com/watch?v=20OjhHOgb5o
 langue: en
 note_le: 2026-11-05
