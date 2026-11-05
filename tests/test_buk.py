@@ -138,6 +138,58 @@ class TestClassiques(unittest.TestCase):
             self.assertIn(c, GLYPHES)
 
 
+class TestBestiaire(unittest.TestCase):
+    def test_bestiary_valid(self):
+        sys.path.insert(0, str(ROOT / "skills" / "buk" / "assets" / "composants"))
+        from buk_composants import Flash
+        from buk_bestiaire import bateau, flammes, panthere, phare, pinup, serpent, toile
+        f = Flash("B", 520, 90)
+        for i, fn in enumerate((panthere, serpent, phare, pinup)):
+            fn(f, 40 + i * 100, 45, 60)
+        toile(f, 450, 40, 20); bateau(f, 300, 80, 40); flammes(f, 480, 85, 40, 30)
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "b.svg"
+            f.ecrire(p)
+            r = validate(p)
+            self.assertEqual(r["erreurs"], [], r["erreurs"])
+
+
+class TestMasqueForme(unittest.TestCase):
+    def test_lines_under_shape_are_removed(self):
+        sys.path.insert(0, str(ROOT / "skills" / "buk" / "assets" / "composants"))
+        from buk_composants import Flash
+        f = Flash("M", 40, 40)
+        f.add("contour", "M0 20 L40 20")
+        f.masquer_forme("M10 10 L30 10 L30 30 L10 30 Z")
+        d = f.couches["contour"][0][0]
+        xs = [float(v) for v in d.replace("M", " ").replace("L", " ").split()[0::2]]
+        self.assertFalse(any(10.5 < x < 29.5 for x in xs))
+        self.assertEqual(d.count("M"), 2)
+
+
+class TestImport(unittest.TestCase):
+    def test_import_synthetic_flash(self):
+        try:
+            import cv2
+            import numpy as np
+        except ImportError:
+            self.skipTest("opencv absent")
+        img = np.full((400, 300, 3), (120, 205, 225), np.uint8)  # papier jaune (BGR)
+        cv2.circle(img, (150, 200), 100, (40, 40, 190), -1)      # aplat rouge
+        cv2.circle(img, (150, 200), 100, (25, 25, 25), 4)        # trait de plume
+        cv2.line(img, (150, 110), (150, 290), (25, 25, 25), 4)
+        with tempfile.TemporaryDirectory() as tmp:
+            src, out = Path(tmp) / "f.png", Path(tmp) / "f.svg"
+            cv2.imwrite(str(src), img)
+            r = run(SCRIPTS / "buk_flash_import.py", src, "--largeur-mm", "50", "-o", out)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            v = validate(out)
+            self.assertEqual(v["erreurs"], [], v["erreurs"])
+            txt = out.read_text(encoding="utf-8")
+            self.assertIn('data-technique="solid-red"', txt)
+            self.assertIn('data-technique="bold-line"', txt)
+
+
 class TestData(unittest.TestCase):
     def test_every_recommended_needle_exists(self):
         techniques, needles = buk_lib.load_data()

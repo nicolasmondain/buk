@@ -55,3 +55,28 @@ dague + rose, cœur + banderole « MOM », crâne + serpent, ancre + corde + ban
 
 Dégradés lisses de type réalisme, contours fins partout, textures complexes, perspective
 photographique, couleurs hors palette, détails inférieurs à 2 mm, lettrage cursif minuscule.
+
+## Composition et lettrage — ce que montrent les planches de référence
+
+Observé sur les planches CC0 du Smithsonian et du Met et sur un tableau Pinterest de flashs
+traditionnels contemporains (analyse seulement, aucune reprise de dessin) :
+
+- **La banderole enveloppe le sujet** : elle passe devant un cœur, autour d'une dague ou sous
+  une hirondelle, avec un pli de chaque côté, plutôt que d'être posée à côté.
+- **Combinaisons à 2–3 éléments** : cœur + banderole + roses, paire d'hirondelles + cœur,
+  dague + lune + étoile. Au-delà, ça devient une manchette, pas un flash.
+- **Lettrage à corps clair** : sur les banderoles, les capitales sont souvent claires (peau ou
+  couleur) cernées de noir avec une ombre portée noire décalée, et non pleines noires. C'est la
+  solution au problème d'ombre portée noté dans `motifs/LETTRAGE.md`.
+- **Trait de plume vivant** : les vieux flashs n'ont pas une épaisseur parfaitement constante ;
+  c'est ce léger tremblé qui fait « dessiné à la main ». Ne pas sur-lisser un import.
+- **Peu de détails intérieurs**, beaucoup de surface en aplat : les hachures des feuilles et les
+  traits de pétales sont rares et courts.
+- **Lignes de mouvement** : un sujet en action (cheval, oiseau qui plonge) a besoin de quelques
+  traits de mouvement, sinon il paraît figé.
+- **Réserve négative** : un soleil, un reflet, une lune peuvent être une découpe dans le noir
+  plutôt qu'un dessin — ça tient mieux dans le temps qu'un détail tracé.
+- **Plis de tissu** (banderole, bandana) : peu de plis, bien chargés d'encre ; trop fins, ils
+  deviennent illisibles en quelques années.
+
+Emplacement, format et vieillissement par zone : `PLACEMENT.md`.

@@ -115,10 +115,27 @@ python3 skills/buk/scripts/buk_stencil.py flashs/rose/rose.svg --by both --mirro
 Le papier décide du miroir : thermique ou hectographique → pas de miroir ; papier jet d'encre posé
 face contre la peau → `--mirror` (voir [`CALQUES.md`](skills/buk/references/CALQUES.md)).
 
-## Le sens artistique de buk
+## Bibliothèque de vrais flashs
+
+buk part de **vrais flashs traditionnels** : 12 motifs tirés de planches du domaine public (CC0,
+Smithsonian et Met, vers 1900–1950) et convertis au contrat buk par
+`skills/buk/scripts/buk_flash_import.py` (trait de plume → lignes à épaisseur d'aiguille, aplats
+rouge/noir, bleu → ombrage). Liste : [`flashs/_classiques/`](flashs/_classiques/README.md) ;
+sources : [`research/design/SOURCES_CC0.md`](research/design/SOURCES_CC0.md).
+
+| | | | |
+|---|---|---|---|
+| <img src="flashs/_classiques/rose_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/hirondelle_friends_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/ancre_usn_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/cartes_lucky_rendu/apercu.svg" height="160"> |
+| <img src="flashs/_classiques/papillon_rendu/apercu.svg" height="140"> | <img src="flashs/_classiques/dague_lune_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/trois_mats_rendu/apercu.svg" height="160"> | <img src="flashs/_classiques/coeur_bouclier_rendu/apercu.svg" height="160"> |
+
+Tes propres croquis passent par le même convertisseur :
+`python3 skills/buk/scripts/buk_flash_import.py croquis.jpg --largeur-mm 70 --titre "…" -o flashs/x/x.svg`.
+
+## Pièces dessinées par buk (secours)
 
 buk dessine à partir d'une **bibliothèque de pièces** (rose, hirondelle, feuille, banderole,
-goutte, étoile nautique, lettrage, fer à cheval, dés, cartes, ancre, crâne, cœur, dague) et de **fiches de grammaire** par motif
+goutte, étoile nautique, lettrage, fer à cheval, dés, cartes, ancre, crâne, cœur, dague, panthère,
+serpent, flammes, toile d'araignée, bateau, phare, pin-up) et de **fiches de grammaire** par motif
 (`skills/buk/references/motifs/`). Avant de montrer un dessin, il le **regarde** :
 `buk_render.py` produit un aperçu, une miniature de 2 cm (lisibilité), une carte des valeurs
 (noir / ombre / clair) et une planche d'étapes ; buk les lit, corrige les pires défauts et
@@ -132,6 +149,8 @@ recommence (protocole : `references/CRITIQUE.md`). Ses goûts s'affinent avec te
 | Classiques | Compositions |
 |---|---|
 | <img src="flashs/_motifs/classiques_rendu/apercu.svg" width="420"> | <img src="flashs/_motifs/compositions_rendu/apercu.svg" width="420"> |
+| **Bestiaire** | **Marine et pin-up** |
+| <img src="flashs/_motifs/bestiaire_rendu/apercu.svg" width="420"> | <img src="flashs/_motifs/marine_pinup_rendu/apercu.svg" width="420"> |
 
 Aussi : lettrage block A–Z / 0–9 (`flashs/_motifs/lettrage.svg`), cœur, dague et enseignes.
 

@@ -83,3 +83,27 @@ sources:
     type: archive
     priorite: 3
     images: peu de planches en ligne ; collection consultable sur demande
+
+  # --- Ajouts du 2026-11-06
+  - nom: Tattoo Archive — histoire des stencils (C.W. Eldridge)
+    url: https://www.tattooarchive.com/history/stencils.php
+    type: blog
+    priorite: 1
+    note: résumé dans skills/buk/references/HISTOIRE_STENCILS.md
+  - nom: Pinterest — Traditional Tattoo Stencils (tableau de infobryson0582)
+    url: https://uk.pinterest.com/infobryson0582/traditional-tattoo-stencils/
+    type: blog
+    priorite: 2
+    images: flashs traditionnels contemporains signés (artistes vivants) — ANALYSE SEULEMENT,
+      jamais d'import ni de tracé ; principes reportés dans DESIGN_OLD_SCHOOL.md
+  - nom: Wikimedia Commons — Flash (tattoo), Clark & Sellers (CC0)
+    url: https://commons.wikimedia.org/wiki/Category:Flash_(tattoo)
+    type: archive
+    priorite: 1
+    images: planches CC0 importables (voir research/design/SOURCES_CC0.md)
+  - nom: Colin Tattoo — stencils traditionnels, placement, couleurs
+    url: https://colintattoo.com/traditional-tattoo-stencils/
+    type: blog
+    priorite: 2
+    note: texte technique reformulé dans CALQUES.md, PLACEMENT.md, ENCRES.md ; site « All Rights
+      Reserved » — aucune image reprise

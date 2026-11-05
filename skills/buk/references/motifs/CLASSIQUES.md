@@ -55,7 +55,7 @@ sous la bande et les queues (`Flash.masquer`). Ordre d'appel : d'abord ce qui es
 ensuite la banderole. Le même `f.masquer(x1, y1, x2, y2)` sert pour tout élément rectangulaire
 posé devant.
 
-## Encore à faire
+## Suite
 
-Panthère, aigle, serpent, flammes, toile d'araignée, bateau, phare, pin-up, lune. Chacun : une
-fonction, une entrée ici, une planche passée par la boucle de `CRITIQUE.md`.
+Panthère, serpent, flammes, toile, bateau, phare, pin-up : voir `BESTIAIRE.md`.
+Encore à faire : lune, panthère rampante, tigre, loup, chouette, gitane, main et poignard.

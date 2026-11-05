@@ -1,5 +1,7 @@
 # Calques de transfert (stencils)
 
+Histoire du stencil (celluloïd gravé, charbon et vaseline, thermofax) : `HISTOIRE_STENCILS.md`.
+
 ## Ce que génère `buk_stencil.py`
 
 | Calque | Contenu | Usage |
@@ -38,11 +40,26 @@ contient une règle de contrôle de 50 mm : la mesurer après impression.
 ## Pose du stencil
 
 1. Peau rasée, désinfectée, sèche.
-2. Solution de transfert (stencil primer) en couche fine, attendre qu'elle devienne collante.
-3. Poser le calque bien à plat, appuyer du centre vers les bords sans glisser, retirer d'un seul
-   geste.
-4. Laisser sécher 10 à 20 minutes (plus le stencil sèche, mieux il résiste à l'essuyage).
-5. Raté ou de travers : nettoyer (alcool / savon), attendre que la peau sèche, recommencer.
+2. Solution de transfert (stencil primer) en **couche fine**, attendre qu'elle devienne collante.
+3. Poser le calque bien à plat, **appuyer fermement** du centre vers les bords sans glisser.
+4. Retirer **lentement en partant d'un coin**. Un papier transfert translucide permet de voir
+   pendant le retrait les zones qui n'ont pas pris (bulles, manques) : reposer avant qu'il soit
+   trop tard.
+5. Laisser sécher 10 à 20 minutes (plus le stencil sèche, mieux il résiste à l'essuyage).
+6. **Dernier contrôle avant l'aiguille** : emplacement, angle, taille sur la zone réelle, accords
+   avec les tatouages voisins et les courbes du corps. C'est le dernier moment où tout se corrige.
+7. Raté ou de travers : nettoyer (alcool / savon), attendre que la peau sèche, recommencer.
+
+### Entraînement
+
+- Sur peau synthétique, un **déodorant en stick** peut remplacer la solution de transfert.
+- Tracer le flash plusieurs fois à la main (papier, puis peau synthétique) avant le premier
+  stencil : la mémoire du geste compte autant que le calque.
+- Une impression jet d'encre ordinaire d'un dessin au trait fonctionne avec le fluide de stencil ;
+  le thermique est préférable dès que le dessin a des épaisseurs variées.
+
+Sources : [Colin Tattoo — Traditional tattoo stencils](https://colintattoo.com/traditional-tattoo-stencils/)
+(reformulé) et `HISTOIRE_STENCILS.md`.
 
 ## Taille et échelle
 

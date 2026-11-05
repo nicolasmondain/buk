@@ -8,6 +8,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from buk_composants import (Flash, banderole, etoile_nautique, feuille, goutte,  # noqa: E402
                             hirondelle, rose)
+from buk_bestiaire import bateau, flammes, panthere, phare, pinup, serpent, toile  # noqa: E402
 from buk_classiques import (ancre, banderole_texte, carte, coeur, crane, dague, de,  # noqa: E402
                             fer_a_cheval, lettrage)
 
@@ -69,8 +70,21 @@ banderole_texte(f, "LUCKY", 193, 50, 52)
 de(f, 180, 78, 9, faces=(6, 1, 4), ang=-10); de(f, 206, 80, 9, faces=(3, 5, 2), ang=12)
 f.ecrire(OUT / "compositions.svg")
 
+f = Flash("Bestiaire", 240, 100)
+panthere(f, 52, 50, 76)
+serpent(f, 140, 54, 76)
+flammes(f, 206, 76, 50, 40)
+f.ecrire(OUT / "bestiaire.svg")
+
+f = Flash("Marine et pin-up", 260, 90)
+toile(f, 32, 45, 30)
+bateau(f, 105, 52, 72)
+phare(f, 170, 45, 74)
+pinup(f, 226, 46, 70)
+f.ecrire(OUT / "marine_pinup.svg")
+
 scripts = HERE.parent.parent / "scripts"
-for name in ("rose", "hirondelles", "pieces", "classiques", "coeur_dague", "lettrage", "compositions"):
+for name in ("rose", "hirondelles", "pieces", "classiques", "coeur_dague", "lettrage", "compositions", "bestiaire", "marine_pinup"):
     svg = OUT / f"{name}.svg"
     r = subprocess.run([sys.executable, scripts / "buk_validate.py", svg], capture_output=True, text=True)
     if r.returncode:

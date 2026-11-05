@@ -41,3 +41,12 @@ Plonger la pointe dans l'eau, machine en marche, jusqu'à ce que l'eau ressorte 
 
 Flacons fermés, à l'abri de la lumière et de la chaleur ; respecter la date de péremption et la
 durée après ouverture. Une encre épaissie ou séparée qui ne se remélange pas est jetée.
+
+## Ce que le rouge et les couleurs deviennent
+
+- Le même rouge cicatrise différemment selon le sous-ton de la peau ; saturer franchement, les
+  zones pâles ou diluées s'effacent les premières et rien ne les rattrape ensuite.
+- On juge la couleur une fois **cicatrisée**, pas fraîche. Croûtes épaisses ou peau trop sèche
+  pendant la cicatrisation = perte de saturation.
+- Après cicatrisation : protection solaire SPF 30 minimum sur le tatouage.
+(Source : [Colin Tattoo — colored tattoo design](https://colintattoo.com/colored-tattoo-design/), reformulé.)

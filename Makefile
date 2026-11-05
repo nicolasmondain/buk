@@ -2,12 +2,13 @@ PY ?= python3
 SKILL := skills/buk
 DEMO := flashs/dague-coeur
 
-.PHONY: help link motifs test demo package research-list research-fetch coverage clean
+.PHONY: help link classiques motifs test demo package research-list research-fetch coverage clean
 
 help:
 	@echo "make link            relie le skill pour Claude Code (.claude/skills/buk)"
 	@echo "make test            tests de bout en bout"
 	@echo "make demo            régénère le flash d'exemple et ses calques"
+	@echo "make classiques      régénère la bibliothèque de vrais flashs (images CC0 requises)"
 	@echo "make motifs          régénère les pièces d'exemple et leurs planches"
 	@echo "make package         dist/buk.zip à importer dans claude.ai (Skills)"
 	@echo "make research-list   catalogue les vidéos (research/sources.yaml)"
@@ -28,6 +29,9 @@ demo:
 	$(PY) $(SKILL)/scripts/buk_validate.py $(DEMO)/dague-coeur.svg
 	$(PY) $(SKILL)/scripts/buk_stencil.py $(DEMO)/dague-coeur.svg --by both --out $(DEMO)/calques
 
+
+classiques:
+	$(PY) research/design/flash_cc0.py
 
 motifs:
 	$(PY) $(SKILL)/assets/composants/_generer_exemples.py

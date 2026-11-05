@@ -34,15 +34,25 @@ Tu ne te substitues pas à un apprentissage : tu le dis une fois, simplement, pu
 
 ### 1. Dessiner ou modifier le flash
 
-1. Clarifie en une question si besoin : motif, emplacement, taille en cm, lettrage.
+1. Clarifie en une question si besoin : motif, emplacement, taille en cm, lettrage. Pour
+   l'emplacement et la taille, appuie-toi sur `references/PLACEMENT.md`.
 2. Lis `references/PREFERENCES.md` (goûts de la personne), `references/DESIGN_OLD_SCHOOL.md`
    (règles du style), `references/SVG_CONTRAT.md` (format du fichier) et la fiche de chaque
    motif concerné dans `references/motifs/`.
-3. **Compose à partir des pièces** de `assets/composants/` : `buk_composants.py` (rose, feuille,
-   hirondelle, banderole, goutte, étoile nautique, réserves, masque) et `buk_classiques.py`
-   (lettrage, banderole à texte, fer à cheval, dés, cartes, ancre, crâne, cœur, dague) — voir
-   `references/motifs/PIECES.md`, `LETTRAGE.md`, `CLASSIQUES.md`.
-   Ce qui n'existe pas encore en pièce s'écrit en chemins SVG au contrat, dans le même esprit.
+3. **Pars d'un vrai flash.** C'est la règle : un dessin traditionnel réel bat toujours un
+   dessin construit point par point (leçon des versions précédentes, jugées « dessin d'enfant »).
+   - Motif présent dans la bibliothèque `flashs/_classiques/` (rose, hirondelles, croix FATHER,
+     papillon, dague et lune, trois-mâts, cœur bouclier, ancre U.S.N., Death before dishonor,
+     cartes LUCKY, crâne DEAD SPORT — planches CC0 du Smithsonian et du Met) : copie le SVG dans
+     `flashs/<nom>/`, puis adapte (taille, aplats, texte).
+   - Image fournie par la personne (son croquis, une planche dont elle a les droits, une planche
+     du domaine public) : `python3 scripts/buk_flash_import.py image.jpg --crop x0 y0 x1 y1
+     --largeur-mm 70 --titre "…" -o flashs/<nom>/<nom>.svg` (voir `references/IMPORT.md`).
+   - Jamais d'import d'une image protégée (blog, Instagram, flash d'un artiste vivant) : elle
+     sert seulement à analyser des principes.
+   - En dernier recours seulement, compose avec les pièces de `assets/composants/`
+     (`references/motifs/PIECES.md`) pour un élément simple manquant (banderole à texte,
+     goutte, étoile, lettrage).
 4. Valide : `python3 scripts/buk_validate.py design.svg` — aucune erreur tolérée.
 5. **Regarde avant de montrer** : boucle de `references/CRITIQUE.md` —
    `python3 scripts/buk_render.py design.svg`, lis les 4 images (aperçu, miniature 2 cm,
@@ -51,8 +61,8 @@ Tu ne te substitues pas à un apprentissage : tu le dis une fois, simplement, pu
    SVG existant (ne repars pas de zéro) ; si la personne corrige un goût, note-le dans
    `references/PREFERENCES.md`.
 
-Si la personne fournit une photo ou un croquis : `scripts/buk_trace.py` produit une base de traits
-que tu redessines ensuite proprement (un tracé automatique n'est jamais un flash fini).
+Pour une photo de tatouage sur peau (pas un dessin), `scripts/buk_trace.py` donne une base
+plus grossière, à reprendre.
 
 ### 2. Générer les calques et la fiche
 
@@ -106,5 +116,9 @@ Approfondis avec `references/AIGUILLES.md`, `references/ENCRES.md`, `references/
 | `references/SOURCES.md` | Synthèse de la recherche vidéo, consensus et désaccords |
 | `assets/techniques.json` / `assets/aiguilles.json` | Données lues par les scripts |
 | `assets/flash/*.svg` | Flashs d'exemple au bon format |
+| `flashs/_classiques/*.svg` (racine du repo) | Bibliothèque de vrais flashs CC0 convertis au contrat buk |
+| `references/IMPORT.md` | Importer un vrai flash (cadrage, réglages, retouches) |
+| `references/PLACEMENT.md` | Choix de l'emplacement, douleur, format, vieillissement |
+| `references/HISTOIRE_STENCILS.md` | Histoire du stencil, à raconter pendant la pose |
 | `assets/composants/buk_composants.py`, `buk_classiques.py` | Pièces paramétrables pour composer un flash |
 | `scripts/buk_render.py` / `buk_planche.py` | Rendus PNG pour la critique, planches d'étapes |

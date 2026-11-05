@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
-from buk_lib import path_subpaths  # noqa: E402
+from buk_lib import inside, path_subpaths  # noqa: E402
 
 NOIR, ROUGE, BLANC = "#111111", "#C1121F", "#FFFFFF"
 
@@ -194,6 +194,52 @@ class Flash:
                             runs.append(run)
                     if runs:
                         new.append((" ".join(fmtp(r, False) for r in runs), direction))
+            self.couches[cid] = new
+        return self
+
+    def masquer_forme(self, d):
+        """Efface les TRAITS déjà dessinés à l'intérieur de la forme `d` (chemin fermé).
+
+        Pour superposer des formes : plume sur plume, anneau sur dague, mèche sur visage. Les zones
+        ne sont pas découpées (sous une forme noire elles sont de toute façon couvertes ; pour une
+        forme en peau posée devant, combiner avec `masquer` rectangulaire ou réserver).
+        """
+        polys = [sp for sp in path_subpaths(str(d))[0] if len(sp) > 2]
+        if not polys:
+            return self
+        xs = [q[0] for sp in polys for q in sp]
+        ys = [q[1] for sp in polys for q in sp]
+        bx1, bx2, by1, by2 = min(xs), max(xs), min(ys), max(ys)
+
+        def dedans(x, y):
+            return bx1 < x < bx2 and by1 < y < by2 and inside((x, y), polys)
+
+        for cid, items in self.couches.items():
+            if COUCHES[cid][0] != "line":
+                continue
+            new = []
+            for dd, direction in items:
+                subs, _ = path_subpaths(dd)
+                runs = []
+                for sp in subs:
+                    dense = []
+                    for (ax, ay), (bx, by) in zip(sp, sp[1:]):
+                        n = max(1, int(math.hypot(bx - ax, by - ay) / .2))
+                        dense += [(ax + (bx - ax) * k / n, ay + (by - ay) * k / n) for k in range(n)]
+                    if sp:
+                        dense.append(sp[-1])
+                    run = []
+                    for pt in dense:
+                        if dedans(*pt):
+                            if len(run) > 1:
+                                runs.append(run)
+                            run = []
+                        else:
+                            run.append(pt)
+                    if len(run) > 1:
+                        runs.append(run)
+                if runs:
+                    new.append((" ".join("M" + " L".join(f"{x:.2f} {y:.2f}" for x, y in r) for r in runs), direction))
             self.couches[cid] = new
         return self
 
